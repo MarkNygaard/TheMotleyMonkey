@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/MarkNygaard/TheMotleyMonkey/compare/themotleymonkey-v2.0.0...themotleymonkey-v2.1.0) (2025-03-22)
+
+
+### Features
+
+* added canonical and robots to seo data ([#898](https://github.com/MarkNygaard/TheMotleyMonkey/issues/898)) ([fccb8a0](https://github.com/MarkNygaard/TheMotleyMonkey/commit/fccb8a01cdf79ddf96072b2f94a9a0243a825ae2))
+
+
+### Bug Fixes
+
+* correct errors ([#895](https://github.com/MarkNygaard/TheMotleyMonkey/issues/895)) ([3e31564](https://github.com/MarkNygaard/TheMotleyMonkey/commit/3e31564dd9e956e5f361c04fc7cd54b80eb0e5c0))
+* upgraded graphql-request and ignored tailwind v4 ([#874](https://github.com/MarkNygaard/TheMotleyMonkey/issues/874)) ([5a4c55d](https://github.com/MarkNygaard/TheMotleyMonkey/commit/5a4c55d4a723ed141075fe1e769697c15bc1affe))
+
 ## [2.0.0](https://github.com/MarkNygaard/TheMotleyMonkey/compare/themotleymonkey-v1.2.0...themotleymonkey-v2.0.0) (2024-10-29)
 
 
