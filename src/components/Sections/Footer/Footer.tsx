@@ -8,7 +8,6 @@ import React from 'react';
 import { StructuredText } from 'react-datocms';
 
 export default function Footer({
-  id,
   location,
   navigationId,
   address,
@@ -38,7 +37,6 @@ export default function Footer({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      key={id}
       className='overflow-hidden pt-10 text-gray-300'
     >
       <div className='flex flex-col pb-4 md:items-center xl:pb-8'>

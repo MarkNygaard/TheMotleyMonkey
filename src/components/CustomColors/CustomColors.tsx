@@ -1,5 +1,3 @@
-'use client';
-
 type Props = {
   primary: string;
   secondary: string;
@@ -8,13 +6,15 @@ type Props = {
 
 const CustomColors = ({ primary, secondary, accent }: Props) => {
   return (
-    <style>{`
+    <head>
+      <style>{`
       :root {
         ${primary};
         ${secondary};
         ${accent};
-      }
-    `}</style>
+        }
+        `}</style>
+    </head>
   );
 };
 

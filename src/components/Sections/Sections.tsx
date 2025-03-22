@@ -21,23 +21,25 @@ export default function Sections({ sections, firstSection }: Readonly<Props>) {
       {sections.map((section) => {
         switch (section.__typename) {
           case 'HeroRecord':
-            return <Hero {...section} firstSection={firstSection} />;
+            return (
+              <Hero key={section.id} {...section} firstSection={firstSection} />
+            );
           case 'TextImageRecord':
-            return <TextImage {...section} />;
+            return <TextImage key={section.id} {...section} />;
           case 'ImageRecord':
-            return <ImageSection {...section} />;
+            return <ImageSection key={section.id} {...section} />;
           case 'TextRecord':
-            return <Text {...section} />;
+            return <Text key={section.id} {...section} />;
           case 'YoutubeVideoRecord':
-            return <YoutubeVideo {...section} />;
+            return <YoutubeVideo key={section.id} {...section} />;
           case 'GridRecord':
-            return <Grid {...section} />;
+            return <Grid key={section.id} {...section} />;
           case 'HairMenuRecord':
-            return <HairMenu {...section} />;
+            return <HairMenu key={section.id} {...section} />;
           case 'BiographyRecord':
-            return <Biography {...section} />;
+            return <Biography key={section.id} {...section} />;
           case 'FooterRecord':
-            return <Footer {...section} />;
+            return <Footer key={section.id} {...section} />;
           default:
             return <></>;
         }

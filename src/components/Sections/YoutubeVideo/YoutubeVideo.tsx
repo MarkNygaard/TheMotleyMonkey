@@ -8,7 +8,6 @@ import React from 'react';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
 export default function YoutubeVideo({
-  id,
   navigationId,
   backgroundColor,
   fadeIn,
@@ -23,7 +22,6 @@ export default function YoutubeVideo({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      key={id}
       className={classNames('flex justify-center px-2 py-10 md:px-10', {
         'bg-skin-secondary': backgroundColor === true,
       })}
@@ -34,7 +32,7 @@ export default function YoutubeVideo({
         className='mx-auto w-full max-w-4xl py-8'
       >
         <div
-          className={classNames('shadow-x1 rounded-lg  p-2 md:p-4', {
+          className={classNames('shadow-x1 rounded-lg p-2 md:p-4', {
             'bg-skin-primary': backgroundColor === true,
             'bg-skin-secondary': backgroundColor === false,
           })}

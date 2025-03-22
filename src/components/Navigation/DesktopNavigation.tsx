@@ -77,10 +77,10 @@ export default function DesktopNavigation({
         id='nav'
       >
         <div className='flex items-center space-x-4'>
-          {socialMediaLinks.map((links: LinkRecord) => {
+          {socialMediaLinks?.map((links: LinkRecord) => {
             return (
               <Link
-                key={links.id}
+                key={`socialLink-${links.id}`}
                 aria-label='social-link'
                 target='_blank'
                 rel='noopener norefferer noreferrer'
@@ -92,7 +92,7 @@ export default function DesktopNavigation({
             );
           })}
         </div>
-        <div className='flex space-x-2'>
+        <div key='desktop-nav' className='flex space-x-2'>
           {content?.map((section: PageModelContentField) => {
             const navigationIdNoSpace = section.navigationId?.replace(
               /\s/g,
@@ -102,14 +102,14 @@ export default function DesktopNavigation({
             return (
               section.navigationId && (
                 <Link
-                  key={section.id}
+                  key={`link-${section.id}`}
                   href={'#' + navigationIdNoSpace}
                   onClick={() => {
                     setActiveSection(section.navigationId as string);
                     setTimeOfLastClick(Date.now());
                   }}
                   className={clsx(
-                    'relative flex px-2 py-1 uppercase opacity-100 lg:px-3 lg:py-2 lg:text-lg  xl:px-4 xl:text-xl',
+                    'relative flex px-2 py-1 uppercase opacity-100 lg:px-3 lg:py-2 lg:text-lg xl:px-4 xl:text-xl',
                     {
                       'font-light text-gray-300 hover:text-white':
                         section.navigationId !== activeSection,

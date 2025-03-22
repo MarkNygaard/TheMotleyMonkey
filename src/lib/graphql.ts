@@ -568,7 +568,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/ar)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/aspect-ratio)
    */
   ar?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -576,7 +576,7 @@ export type ImgixParams = {
    *
    * Applies automatic enhancements to images.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/auto)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/automatic)
    */
   auto?: InputMaybe<Array<ImgixParamsAuto>>;
   /**
@@ -584,7 +584,7 @@ export type ImgixParams = {
    *
    * Colors the background of padded and partially-transparent images.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/bg)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/background-color)
    */
   bg?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -592,7 +592,7 @@ export type ImgixParams = {
    *
    * Removes background from image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal)
    */
   bgRemove?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -600,23 +600,41 @@ export type ImgixParams = {
    *
    * Overrides default fallback behavior for bg-remove failures.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-remove)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal-fallback)
    */
   bgRemoveFallback?: InputMaybe<Scalars['BooleanType']['input']>;
+  /**
+   * Background Removal Foreground Type
+   *
+   * Specifies the image foreground type for background removal.
+   *
+   * Depends on: `bg-remove=true`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal-foreground-type)
+   */
+  bgRemoveFgType?: InputMaybe<Array<ImgixParamsBgRemoveFgType>>;
+  /**
+   * Background Removal Semi Transparency
+   *
+   * Enables background removal while retaining semi-transparent areas.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-removal-semi-transparency)
+   */
+  bgRemoveSemiTransparency?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
    * Background Replacement
    *
    * Replaces background from image using a string based prompt.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-replacement)
    */
   bgReplace?: InputMaybe<Scalars['String']['input']>;
   /**
-   * Background Removal Fallback
+   * Background Replace Fallback
    *
    * Overrides default fallback behavior for bg-replace failures.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-replace-fallback)
    */
   bgReplaceFallback?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -624,7 +642,7 @@ export type ImgixParams = {
    *
    * Provides a negative text suggestion for background replacement.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/background/background-replacement-negative-prompt)
    */
   bgReplaceNegPrompt?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -632,7 +650,7 @@ export type ImgixParams = {
    *
    * Specifies the location of the blend image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend)
    */
   blend?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -642,7 +660,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-align)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-align)
    */
   blendAlign?: InputMaybe<Array<ImgixParamsBlendAlign>>;
   /**
@@ -652,7 +670,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-alpha)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-alpha)
    */
   blendAlpha?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -660,7 +678,7 @@ export type ImgixParams = {
    *
    * Specifies a color to use when applying the blend.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-color)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-color)
    */
   blendColor?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -670,7 +688,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-crop)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-crop)
    */
   blendCrop?: InputMaybe<Array<ImgixParamsBlendCrop>>;
   /**
@@ -680,7 +698,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-fit)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-fit)
    */
   blendFit?: InputMaybe<ImgixParamsBlendFit>;
   /**
@@ -690,7 +708,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-h)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-height)
    */
   blendH?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -700,7 +718,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-mode)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-mode)
    */
   blendMode?: InputMaybe<ImgixParamsBlendMode>;
   /**
@@ -710,7 +728,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-pad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-padding)
    */
   blendPad?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -720,7 +738,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-size)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-size)
    */
   blendSize?: InputMaybe<ImgixParamsBlendSize>;
   /**
@@ -730,7 +748,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-w)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-width)
    */
   blendW?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -740,7 +758,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-x)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-x-position)
    */
   blendX?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -750,7 +768,7 @@ export type ImgixParams = {
    *
    * Depends on: `blend`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-y)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/blending/blend-y-position)
    */
   blendY?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -758,7 +776,7 @@ export type ImgixParams = {
    *
    * Applies a gaussian blur to an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/blur)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/gaussian-blur)
    */
   blur?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -766,7 +784,7 @@ export type ImgixParams = {
    *
    * Applies a border to an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size)
    */
   border?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -776,7 +794,7 @@ export type ImgixParams = {
    *
    * Depends on: `border`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-bottom)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-bottom)
    */
   borderBottom?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -786,7 +804,7 @@ export type ImgixParams = {
    *
    * Depends on: `border`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-left)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-left)
    */
   borderLeft?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -796,7 +814,7 @@ export type ImgixParams = {
    *
    * Depends on: `border`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-radius)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/outer-border-radius)
    */
   borderRadius?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -806,7 +824,7 @@ export type ImgixParams = {
    *
    * Depends on: `border`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-radius-inner)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/inner-border-radius)
    */
   borderRadiusInner?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -816,7 +834,7 @@ export type ImgixParams = {
    *
    * Depends on: `border`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-right)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-right)
    */
   borderRight?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -826,7 +844,7 @@ export type ImgixParams = {
    *
    * Depends on: `border`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-top)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/border-top)
    */
   borderTop?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -834,7 +852,7 @@ export type ImgixParams = {
    *
    * Adjusts the brightness of the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/bri)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/brightness)
    */
   bri?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -842,7 +860,7 @@ export type ImgixParams = {
    *
    * Sets one or more Client-Hints headers
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/ch)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/client-hints)
    */
   ch?: InputMaybe<Array<ImgixParamsCh>>;
   /**
@@ -850,7 +868,7 @@ export type ImgixParams = {
    *
    * Specifies the output chroma subsampling rate.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/chromasub)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/chroma-subsampling)
    */
   chromasub?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -858,7 +876,7 @@ export type ImgixParams = {
    *
    * Limits the number of unique colors in an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/colorquant)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/color-quantization)
    */
   colorquant?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -868,7 +886,7 @@ export type ImgixParams = {
    *
    * Depends on: `palette`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/color-palette/colors)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/color-palette/palette-color-count)
    */
   colors?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -876,7 +894,7 @@ export type ImgixParams = {
    *
    * Adjusts the contrast of the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/con)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/contrast)
    */
   con?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -886,7 +904,7 @@ export type ImgixParams = {
    *
    * Depends on: `mask=corners`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/mask/corner-radius)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/mask-image/mask-corner-radius)
    */
   cornerRadius?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -896,7 +914,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/crop)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/crop-mode)
    */
   crop?: InputMaybe<Array<ImgixParamsCrop>>;
   /**
@@ -904,7 +922,7 @@ export type ImgixParams = {
    *
    * Specifies the color space of the output image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/cs)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/color-space)
    */
   cs?: InputMaybe<ImgixParamsCs>;
   /**
@@ -912,7 +930,7 @@ export type ImgixParams = {
    *
    * Forces a URL to use send-file in its response.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/dl)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/download)
    */
   dl?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -920,7 +938,7 @@ export type ImgixParams = {
    *
    * Sets the DPI value in the EXIF header.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/dpi)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/dots-per-inch)
    */
   dpi?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -928,7 +946,7 @@ export type ImgixParams = {
    *
    * Adjusts the device-pixel ratio of the output image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/dpr)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/device-pixel-ratio)
    */
   dpr?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -936,7 +954,7 @@ export type ImgixParams = {
    *
    * Applies a duotone effect to the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/duotone)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/duotone)
    */
   duotone?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -946,7 +964,7 @@ export type ImgixParams = {
    *
    * Depends on: `duotone`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/duotone-alpha)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/duotone-alpha)
    */
   duotoneAlpha?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -954,7 +972,7 @@ export type ImgixParams = {
    *
    * Adjusts the exposure of the output image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/exp)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/exposure)
    */
   exp?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -962,9 +980,25 @@ export type ImgixParams = {
    *
    * A Unix timestamp specifying a UTC time. Requests made to this URL after that time will output a 404 status code.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/expires)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/expiration)
    */
   expires?: InputMaybe<Scalars['IntType']['input']>;
+  /**
+   * Face Blur
+   *
+   * Specifies the amount of blur to apply to detected faces. Defaults to 0.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-blur)
+   */
+  faceBlur?: InputMaybe<Scalars['IntType']['input']>;
+  /**
+   * Face Pixelation
+   *
+   * Specifies the pixelation amount of the face.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-pixelation)
+   */
+  facePixel?: InputMaybe<Scalars['IntType']['input']>;
   /**
    * Face Index
    *
@@ -972,7 +1006,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=facearea`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/face-detection/faceindex)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-index)
    */
   faceindex?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -982,7 +1016,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=facearea`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/face-detection/facepad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/face-padding)
    */
   facepad?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -992,7 +1026,7 @@ export type ImgixParams = {
    *
    * Depends on: `fm=json`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/face-detection/faces)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/face-detection/json-face-data)
    */
   faces?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1002,7 +1036,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-mode)
    */
   fill?: InputMaybe<ImgixParamsFill>;
   /**
@@ -1012,7 +1046,7 @@ export type ImgixParams = {
    *
    * Depends on: `fill=solid`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-color)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-color)
    */
   fillColor?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1022,7 +1056,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gen`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-fallback)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-fallback)
    */
   fillGenFallback?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -1032,7 +1066,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gen`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-neg-prompt)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-negative-prompt)
    */
   fillGenNegPrompt?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1042,7 +1076,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gen`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-pos)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-position)
    */
   fillGenPos?: InputMaybe<Array<ImgixParamsFillGenPos>>;
   /**
@@ -1052,7 +1086,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gen`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-prompt)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-prompt)
    */
   fillGenPrompt?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1062,7 +1096,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gen`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gen-seed)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-generative-seed)
    */
   fillGenSeed?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1072,7 +1106,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gradient`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-cs)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-color-space)
    */
   fillGradientCs?: InputMaybe<ImgixParamsFillGradientCs>;
   /**
@@ -1082,7 +1116,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gradient`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-linear)
    */
   fillGradientLinear?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1092,7 +1126,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gen`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-linear-direction)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-linear-direction)
    */
   fillGradientLinearDirection?: InputMaybe<Array<ImgixParamsFillGradientLinearDirection>>;
   /**
@@ -1102,7 +1136,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gradient`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial)
    */
   fillGradientRadial?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1112,7 +1146,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gradient`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-radius)
    */
   fillGradientRadialRadius?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1122,7 +1156,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gradient`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-x)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-x)
    */
   fillGradientRadialX?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1132,7 +1166,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gradient`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-radial-y)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-y)
    */
   fillGradientRadialY?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1142,7 +1176,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=fill`, `fill=gradient`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-gradient-type)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-type)
    */
   fillGradientType?: InputMaybe<ImgixParamsFillGradientType>;
   /**
@@ -1150,7 +1184,7 @@ export type ImgixParams = {
    *
    * Specifies how to map the source image to the output image dimensions.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/fit)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/resize-fit-mode)
    */
   fit?: InputMaybe<ImgixParamsFit>;
   /**
@@ -1158,7 +1192,7 @@ export type ImgixParams = {
    *
    * Flips an image on a specified axis.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/rotation/flip)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/flip-axis)
    */
   flip?: InputMaybe<ImgixParamsFlip>;
   /**
@@ -1166,7 +1200,7 @@ export type ImgixParams = {
    *
    * Changes the format of the output image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/fm)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/output-format)
    */
   fm?: InputMaybe<ImgixParamsFm>;
   /**
@@ -1176,7 +1210,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`, `crop=focalpoint`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-debug)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-debug)
    */
   fpDebug?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -1186,7 +1220,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`, `crop=focalpoint`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-x)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-x-position)
    */
   fpX?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1196,7 +1230,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`, `crop=focalpoint`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-y)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-y-position)
    */
   fpY?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1206,19 +1240,23 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`, `crop=focalpoint`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-z)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-zoom)
    */
   fpZ?: InputMaybe<Scalars['FloatType']['input']>;
   /**
    * Frames Per Second
    *
    * Specifies the framerate of the generated image.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frames-per-second)
    */
   fps?: InputMaybe<Scalars['IntType']['input']>;
   /**
    * Frame Selection
    *
    * Specifies the frame of an animated image to use.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frame-selection)
    */
   frame?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1226,7 +1264,7 @@ export type ImgixParams = {
    *
    * Adjusts the gamma of the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/gam)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/gamma)
    */
   gam?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1235,6 +1273,8 @@ export type ImgixParams = {
    * Specifies the quality of the animated gif. The higher the value, the better more compression is applied.
    *
    * Depends on: `fm=gif`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/animated-gif-quality)
    */
   gifQ?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1243,6 +1283,8 @@ export type ImgixParams = {
    * Sets grid colors for the transparency checkerboard grid.
    *
    * Depends on: `transparency`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/grid-colors)
    */
   gridColors?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1251,6 +1293,8 @@ export type ImgixParams = {
    * Sets grid size for the transparency checkerboard grid.
    *
    * Depends on: `transparency`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/grid-size)
    */
   gridSize?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1258,7 +1302,7 @@ export type ImgixParams = {
    *
    * Adjusts the height of the output image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/h)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/image-height)
    */
   h?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1266,7 +1310,7 @@ export type ImgixParams = {
    *
    * Adjusts the highlights of the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/high)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/highlight)
    */
   high?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1274,7 +1318,7 @@ export type ImgixParams = {
    *
    * Applies a half-tone effect to the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/htn)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/halftone)
    */
   htn?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1282,13 +1326,15 @@ export type ImgixParams = {
    *
    * Adjusts the hue of the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/hue)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/hue-shift)
    */
   hue?: InputMaybe<Scalars['IntType']['input']>;
   /**
    * Frame Interval
    *
    * Displays every Nth frame starting with the first frame.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frame-interval)
    */
   interval?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1296,25 +1342,31 @@ export type ImgixParams = {
    *
    * Inverts the colors on the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/invert)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/invert)
    */
   invert?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
    * Iptc Passthrough
    *
    * Determine if IPTC data should be passed for JPEG images.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/iptc-passthrough)
    */
   iptc?: InputMaybe<ImgixParamsIptc>;
   /**
    * Jpg Progressive
    *
    * Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/jpg-progressive)
    */
   jpgProgressive?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
    * Animation Loop Count
    *
    * Specifies the number of times an animated image should repeat. A value of 0 means infinite looping.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation)
    */
   loop?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1324,15 +1376,23 @@ export type ImgixParams = {
    *
    * Depends on: `fm=webp`, `fm=jxr`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/lossless)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/lossless-compression)
    */
   lossless?: InputMaybe<Scalars['BooleanType']['input']>;
+  /**
+   * License Plate Blur
+   *
+   * Specifies the amount of blur to apply to detected license plates. Defaults to 0.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/license-plate-detection/license-plate-blur)
+   */
+  lpBlur?: InputMaybe<Scalars['IntType']['input']>;
   /**
    * Watermark Image Url
    *
    * Specifies the location of the watermark image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-image-url)
    */
   mark?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1342,7 +1402,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-align)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-alignment-mode)
    */
   markAlign?: InputMaybe<Array<ImgixParamsMarkAlign>>;
   /**
@@ -1352,7 +1412,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-alpha)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-alpha)
    */
   markAlpha?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1362,7 +1422,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-base)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-base-url)
    */
   markBase?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1372,7 +1432,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`, `markw`, `markh`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-fit)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-fit-mode)
    */
   markFit?: InputMaybe<ImgixParamsMarkFit>;
   /**
@@ -1382,9 +1442,29 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-h)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-height)
    */
   markH?: InputMaybe<Scalars['FloatType']['input']>;
+  /**
+   * Watermark If Minimum Height
+   *
+   * Displays the watermark if rendered base image pixel height is equal to or larger than the supplied value
+   *
+   * Depends on: `mark`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-if-minimum-height)
+   */
+  markIfMinHeight?: InputMaybe<Scalars['IntType']['input']>;
+  /**
+   * Watermark If Minimum Width
+   *
+   * Displays the watermark if rendered base image pixel width is equal to or larger than the supplied value
+   *
+   * Depends on: `mark`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-if-minimum-width)
+   */
+  markIfMinWidth?: InputMaybe<Scalars['IntType']['input']>;
   /**
    * Watermark Padding
    *
@@ -1392,7 +1472,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-pad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-padding)
    */
   markPad?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1400,7 +1480,7 @@ export type ImgixParams = {
    *
    * Rotates a watermark or tiled watermarks by a specified number of degrees.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-rot)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-rotation)
    */
   markRot?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1410,7 +1490,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-scale)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-scale)
    */
   markScale?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1420,7 +1500,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-tile)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-tile)
    */
   markTile?: InputMaybe<ImgixParamsMarkTile>;
   /**
@@ -1430,7 +1510,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-w)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-width)
    */
   markW?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1440,7 +1520,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-x)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-x-position)
    */
   markX?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1450,7 +1530,7 @@ export type ImgixParams = {
    *
    * Depends on: `mark`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-y)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/watermark/watermark-y-position)
    */
   markY?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1458,7 +1538,7 @@ export type ImgixParams = {
    *
    * Defines the type of mask and specifies the URL if that type is selected.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/mask)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/mask-image/mask-type)
    */
   mask?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1468,7 +1548,7 @@ export type ImgixParams = {
    *
    * Depends on: `mask`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/mask/mask-bg)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/mask-image/mask-background-color)
    */
   maskBg?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1478,7 +1558,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/max-height)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/maximum-height)
    */
   maxH?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1488,7 +1568,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/max-width)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/maximum-width)
    */
   maxW?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1498,7 +1578,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/min-height)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/minimum-height)
    */
   minH?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1508,7 +1588,7 @@ export type ImgixParams = {
    *
    * Depends on: `fit=crop`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/min-width)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/minimum-width)
    */
   minW?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1516,7 +1596,7 @@ export type ImgixParams = {
    *
    * Applies a monochrome effect to the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/monochrome)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/monochrome)
    */
   monochrome?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1524,7 +1604,7 @@ export type ImgixParams = {
    *
    * Reduces the noise in an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/noise-reduction/nr)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-bound)
    */
   nr?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1532,15 +1612,53 @@ export type ImgixParams = {
    *
    * Provides a threshold by which to sharpen an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/noise-reduction/nrs)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-sharpen)
    */
   nrs?: InputMaybe<Scalars['IntType']['input']>;
+  /**
+   * Object Removal Negative Prompt
+   *
+   * Provides a negative text suggestion to object-removal-prompt. Used to reduce the probability of a subject, detail, or object appearing in generative output.
+   *
+   * Depends on: `object-removal-rect`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-negative-prompt)
+   */
+  objectRemovalNegativePrompt?: InputMaybe<Scalars['String']['input']>;
+  /**
+   * Object Removal Prompt
+   *
+   * Suggest auto generative fill for the object-removal-rect parameter
+   *
+   * Depends on: `object-removal-rect`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-prompt)
+   */
+  objectRemovalPrompt?: InputMaybe<Scalars['String']['input']>;
+  /**
+   * Object Removal
+   *
+   * Using a specified rectangle, an object is removed from the image
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal)
+   */
+  objectRemovalRect?: InputMaybe<Scalars['String']['input']>;
+  /**
+   * Object Removal Seed
+   *
+   * Sets the generative seed value for object-removal. Used to generate new outputs from the same prompt
+   *
+   * Depends on: `object-removal-rect`, `object-removal-prompt`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-seed)
+   */
+  objectRemovalSeed?: InputMaybe<Scalars['IntType']['input']>;
   /**
    * Orientation
    *
    * Changes the image orientation.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/rotation/orient)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/orientation)
    */
   orient?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1548,7 +1666,7 @@ export type ImgixParams = {
    *
    * Pads an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/pad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding)
    */
   pad?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1556,7 +1674,7 @@ export type ImgixParams = {
    *
    * Sets bottom padding of an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/pad-bottom)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-bottom)
    */
   padBottom?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1564,7 +1682,7 @@ export type ImgixParams = {
    *
    * Sets left padding of an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/pad-left)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-left)
    */
   padLeft?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1572,7 +1690,7 @@ export type ImgixParams = {
    *
    * Sets right padding of an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/pad-right)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-right)
    */
   padRight?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1580,7 +1698,7 @@ export type ImgixParams = {
    *
    * Sets top padding of an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/pad-top)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/border-and-padding/padding-top)
    */
   padTop?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1588,7 +1706,7 @@ export type ImgixParams = {
    *
    * Selects a page from a PDF for display.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/pdf/page)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/pdf/pdf-page-number)
    */
   page?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1596,7 +1714,7 @@ export type ImgixParams = {
    *
    * Specifies an output format for palette-extraction.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/color-palette/palette)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/color-palette/color-palette-extraction)
    */
   palette?: InputMaybe<ImgixParamsPalette>;
   /**
@@ -1604,7 +1722,7 @@ export type ImgixParams = {
    *
    * Enables or disables PDF annotation.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/pdf/pdf-annotation)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/pdf/pdf-annotation)
    */
   pdfAnnotation?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -1614,7 +1732,7 @@ export type ImgixParams = {
    *
    * Depends on: `palette=css`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/color-palette/prefix)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/color-palette/css-prefix)
    */
   prefix?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1622,7 +1740,7 @@ export type ImgixParams = {
    *
    * Applies a pixelation effect to an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/px)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/pixellate)
    */
   px?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1630,23 +1748,31 @@ export type ImgixParams = {
    *
    * Adjusts the quality of an output image.
    *
-   * Depends on: `fm=jpg`, `fm=pjpg`, `fm=webp`, `fm=jxr`
+   * Depends on: `fm=avif`, `fm=jpg`, `fm=pjpg`, `fm=webp`, `fm=jxr`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/format/q)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/output-quality)
    */
   q?: InputMaybe<Scalars['IntType']['input']>;
+  /**
+   * Rasterize Bypass
+   *
+   * Bypasses all rendering parameters (including default parameters) and serves the original image. Works for svg+xml,x-eps,pdf, and vnd.adobe.illustrator.
+   */
+  rasterizeBypass?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
    * Source Rectangle Region
    *
    * Crops an image to a specified rectangle.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/rect)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/source-rectangle-region)
    */
   rect?: InputMaybe<Scalars['String']['input']>;
   /**
    * Reverse
    *
    * Reverses the frame order on the source animation.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/reverse)
    */
   reverse?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -1654,15 +1780,23 @@ export type ImgixParams = {
    *
    * Rotates an image by a specified number of degrees.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/rotation/rot)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/rotation)
    */
   rot?: InputMaybe<Scalars['FloatType']['input']>;
+  /**
+   * Rotation Type
+   *
+   * Changes the rotation type.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/rotation/rotation-type)
+   */
+  rotType?: InputMaybe<ImgixParamsRotType>;
   /**
    * Saturation
    *
    * Adjusts the saturation of an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/sat)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/saturation)
    */
   sat?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1670,7 +1804,7 @@ export type ImgixParams = {
    *
    * Applies a sepia effect to an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/sepia)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/stylize/sepia-tone)
    */
   sepia?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1678,7 +1812,7 @@ export type ImgixParams = {
    *
    * Adjusts the highlights of the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/shad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/shadow)
    */
   shad?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1686,13 +1820,15 @@ export type ImgixParams = {
    *
    * Adjusts the sharpness of the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/sharp)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/sharpen)
    */
   sharp?: InputMaybe<Scalars['FloatType']['input']>;
   /**
    * Frame Skip
    *
    * Skips every Nth frame starting with the first frame.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/animation/frame-skip)
    */
   skip?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1705,6 +1841,8 @@ export type ImgixParams = {
    * Sanitize Svg
    *
    * Specifies whether to sanitize an SVG.
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/format/sanitize-svg)
    */
   svgSanitize?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -1712,7 +1850,7 @@ export type ImgixParams = {
    *
    * Adds checkerboard behind images which support transparency.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/transparency)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/transparency)
    */
   transparency?: InputMaybe<ImgixParamsTransparency>;
   /**
@@ -1720,9 +1858,19 @@ export type ImgixParams = {
    *
    * Trims the source image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-image)
    */
   trim?: InputMaybe<ImgixParamsTrim>;
+  /**
+   * Trim Alpha
+   *
+   * Specifies a trim alpha on a trim operation.
+   *
+   * Depends on: `trim=alpha`
+   *
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-alpha)
+   */
+  trimAlpha?: InputMaybe<Scalars['FloatType']['input']>;
   /**
    * Trim Color
    *
@@ -1730,7 +1878,7 @@ export type ImgixParams = {
    *
    * Depends on: `trim=color`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-color)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-color)
    */
   trimColor?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1740,7 +1888,7 @@ export type ImgixParams = {
    *
    * Depends on: `trim=auto`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-md)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-mean-difference)
    */
   trimMd?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1750,7 +1898,7 @@ export type ImgixParams = {
    *
    * Depends on: `trim`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-pad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-padding)
    */
   trimPad?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1760,7 +1908,7 @@ export type ImgixParams = {
    *
    * Depends on: `trim=auto`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-sd)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-standard-deviation)
    */
   trimSd?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1770,7 +1918,7 @@ export type ImgixParams = {
    *
    * Depends on: `trim=color`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-tol)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/trim/trim-tolerance)
    */
   trimTol?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1778,7 +1926,7 @@ export type ImgixParams = {
    *
    * Sets the text string to render.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-string)
    */
   txt?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1788,7 +1936,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-align)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-align)
    */
   txtAlign?: InputMaybe<Array<ImgixParamsTxtAlign>>;
   /**
@@ -1798,7 +1946,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-clip)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-clipping-mode)
    */
   txtClip?: InputMaybe<Array<ImgixParamsTxtClip>>;
   /**
@@ -1808,7 +1956,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-color)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-color)
    */
   txtColor?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1818,7 +1966,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-fit)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-fit-mode)
    */
   txtFit?: InputMaybe<ImgixParamsTxtFit>;
   /**
@@ -1828,7 +1976,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-font)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-font)
    */
   txtFont?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1838,7 +1986,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/typesetting/txt-lead)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/typesetting-endpoint/text-leading)
    */
   txtLead?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1848,7 +1996,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-line)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-outline)
    */
   txtLine?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1858,7 +2006,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`, `txtline`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-line-color)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-outline-color)
    */
   txtLineColor?: InputMaybe<Scalars['String']['input']>;
   /**
@@ -1868,7 +2016,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-pad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-padding)
    */
   txtPad?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1878,7 +2026,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-shad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-shadow)
    */
   txtShad?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1888,7 +2036,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-size)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-font-size)
    */
   txtSize?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1898,7 +2046,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/typesetting/txt-track)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/typesetting-endpoint/text-tracking)
    */
   txtTrack?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1908,7 +2056,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-width)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-width)
    */
   txtWidth?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1918,7 +2066,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-x)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-x-position)
    */
   txtX?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1928,7 +2076,7 @@ export type ImgixParams = {
    *
    * Depends on: `txt`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-y)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/text/text-y-position)
    */
   txtY?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1936,7 +2084,7 @@ export type ImgixParams = {
    *
    * Uses generative AI fill to upscale low resolution images.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution)
    */
   upscale?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -1944,7 +2092,7 @@ export type ImgixParams = {
    *
    * Overrides default fallback behavior for super resolution failures
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/super-resolution)
    */
   upscaleFallback?: InputMaybe<Scalars['BooleanType']['input']>;
   /**
@@ -1952,7 +2100,7 @@ export type ImgixParams = {
    *
    * Sharpens the source image using an unsharp mask.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/usm)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/unsharp-mask)
    */
   usm?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1962,7 +2110,7 @@ export type ImgixParams = {
    *
    * Depends on: `usm`
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/usmrad)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/unsharp-mask-radius)
    */
   usmrad?: InputMaybe<Scalars['FloatType']['input']>;
   /**
@@ -1970,7 +2118,7 @@ export type ImgixParams = {
    *
    * Adjusts the vibrance of an image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/vib)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/adjustment/vibrance)
    */
   vib?: InputMaybe<Scalars['IntType']['input']>;
   /**
@@ -1978,7 +2126,7 @@ export type ImgixParams = {
    *
    * Adjusts the width of the output image.
    *
-   * [Open Imgix reference »](https://docs.imgix.com/apis/url/size/w)
+   * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/size/image-width)
    */
   w?: InputMaybe<Scalars['FloatType']['input']>;
 };
@@ -1988,6 +2136,11 @@ export enum ImgixParamsAuto {
   enhance = 'enhance',
   format = 'format',
   redeye = 'redeye'
+}
+
+export enum ImgixParamsBgRemoveFgType {
+  auto = 'auto',
+  car = 'car'
 }
 
 export enum ImgixParamsBlendAlign {
@@ -2057,6 +2210,7 @@ export enum ImgixParamsCrop {
 
 export enum ImgixParamsCs {
   adobergb1998 = 'adobergb1998',
+  origin = 'origin',
   srgb = 'srgb',
   strip = 'strip',
   tinysrgb = 'tinysrgb'
@@ -2165,11 +2319,17 @@ export enum ImgixParamsPalette {
   json = 'json'
 }
 
+export enum ImgixParamsRotType {
+  pivot = 'pivot',
+  straighten = 'straighten'
+}
+
 export enum ImgixParamsTransparency {
   grid = 'grid'
 }
 
 export enum ImgixParamsTrim {
+  alpha = 'alpha',
   auto = 'auto',
   color = 'color'
 }
@@ -2234,7 +2394,6 @@ export type LayoutRecord = RecordInterface & {
   mobileMennuCtaUrl?: Maybe<Scalars['String']['output']>;
   mobileMenuCta: Scalars['BooleanType']['output'];
   mobileMenuCtaText?: Maybe<Scalars['String']['output']>;
-  mobileMenuCtaVariant?: Maybe<Scalars['String']['output']>;
   primaryColor?: Maybe<ColorField>;
   secondaryColor?: Maybe<ColorField>;
   socialMediaLinks: Array<LinkRecord>;
@@ -3097,28 +3256,28 @@ export const responsiveImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Documen
 export const BiographyFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BiographyFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"StringValue","value":"440","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"StringValue","value":"590","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"bioDescription"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<BiographyFragmentFragment, unknown>;
 export const FooterFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"FooterFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"location"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","name":{"kind":"Name","value":"openingHours"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"info"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<FooterFragmentFragment, unknown>;
 export const RtImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<RtImageFragmentFragment, unknown>;
-export const GridFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"mobileColumns"}},{"kind":"Field","name":{"kind":"Name","value":"tabletColumns"}},{"kind":"Field","name":{"kind":"Name","value":"desktopColumns"}},{"kind":"Field","name":{"kind":"Name","value":"gap"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sections"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}}]} as unknown as DocumentNode<GridFragmentFragment, unknown>;
+export const GridFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"mobileColumns"}},{"kind":"Field","name":{"kind":"Name","value":"tabletColumns"}},{"kind":"Field","name":{"kind":"Name","value":"desktopColumns"}},{"kind":"Field","name":{"kind":"Name","value":"gap"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sections"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}}]} as unknown as DocumentNode<GridFragmentFragment, unknown>;
 export const GridImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<GridImageFragmentFragment, unknown>;
 export const GridTextFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridTextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}}]} as unknown as DocumentNode<GridTextFragmentFragment, unknown>;
 export const PricesFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}}]} as unknown as DocumentNode<PricesFragmentFragment, unknown>;
 export const PriceModulesFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PriceModulesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceModuleRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"prices"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PricesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}}]} as unknown as DocumentNode<PriceModulesFragmentFragment, unknown>;
 export const HairMenuFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HairMenuFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"priceModules"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PriceModulesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PriceModulesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceModuleRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"prices"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PricesFragment"}}]}}]}}]} as unknown as DocumentNode<HairMenuFragmentFragment, unknown>;
 export const HeroFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HeroFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"backgroundImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"q"},"value":{"kind":"IntValue","value":"60"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"buttonLink"}},{"kind":"Field","name":{"kind":"Name","value":"magneticButton"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<HeroFragmentFragment, unknown>;
-export const ImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"imageTitle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<ImageFragmentFragment, unknown>;
+export const ImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"imageTitle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<ImageFragmentFragment, unknown>;
 export const CustomHeadingFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<CustomHeadingFragmentFragment, unknown>;
-export const TextFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"headerTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<TextFragmentFragment, unknown>;
-export const TextImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageLocation"}},{"kind":"Field","name":{"kind":"Name","value":"imageStyle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"format"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<TextImageFragmentFragment, unknown>;
+export const TextFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"headerTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<TextFragmentFragment, unknown>;
+export const TextImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageLocation"}},{"kind":"Field","name":{"kind":"Name","value":"imageStyle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"format"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<TextImageFragmentFragment, unknown>;
 export const YoutubeVideoFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"YoutubeVideoFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"providerUid"}}]}}]}}]} as unknown as DocumentNode<YoutubeVideoFragmentFragment, unknown>;
 export const metaTagsFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"metaTagsFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<metaTagsFragmentFragment, unknown>;
 export const CustomColorsDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CustomColors"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"primaryColor"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"red"}},{"kind":"Field","name":{"kind":"Name","value":"green"}},{"kind":"Field","name":{"kind":"Name","value":"blue"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondaryColor"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"red"}},{"kind":"Field","name":{"kind":"Name","value":"green"}},{"kind":"Field","name":{"kind":"Name","value":"blue"}}]}},{"kind":"Field","name":{"kind":"Name","value":"accentColor"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"red"}},{"kind":"Field","name":{"kind":"Name","value":"green"}},{"kind":"Field","name":{"kind":"Name","value":"blue"}}]}}]}}]}}]} as unknown as DocumentNode<CustomColorsQuery, CustomColorsQueryVariables>;
-export const HomePageDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"HomePage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"site"},"name":{"kind":"Name","value":"_site"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"favicon"},"name":{"kind":"Name","value":"faviconMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"metaTagsFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"page"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"metaTagsFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"HeroFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"TextFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"TextImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"GridFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"YoutubeVideoFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"HairMenuFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BiographyFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"FooterFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PriceModulesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceModuleRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"prices"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PricesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"metaTagsFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HeroFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"backgroundImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"q"},"value":{"kind":"IntValue","value":"60"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"buttonLink"}},{"kind":"Field","name":{"kind":"Name","value":"magneticButton"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"headerTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"imageTitle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageLocation"}},{"kind":"Field","name":{"kind":"Name","value":"imageStyle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"format"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"mobileColumns"}},{"kind":"Field","name":{"kind":"Name","value":"tabletColumns"}},{"kind":"Field","name":{"kind":"Name","value":"desktopColumns"}},{"kind":"Field","name":{"kind":"Name","value":"gap"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sections"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"YoutubeVideoFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"providerUid"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HairMenuFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"priceModules"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PriceModulesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BiographyFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"StringValue","value":"440","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"StringValue","value":"590","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"bioDescription"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"FooterFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"location"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","name":{"kind":"Name","value":"openingHours"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"info"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<HomePageQuery, HomePageQueryVariables>;
+export const HomePageDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"HomePage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"site"},"name":{"kind":"Name","value":"_site"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"favicon"},"name":{"kind":"Name","value":"faviconMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"metaTagsFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"page"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"metaTagsFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"HeroFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"TextFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"TextImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"GridFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"YoutubeVideoFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"HairMenuFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BiographyFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"FooterFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PriceModulesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceModuleRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"prices"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PricesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"metaTagsFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HeroFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"backgroundImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"q"},"value":{"kind":"IntValue","value":"60"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"buttonLink"}},{"kind":"Field","name":{"kind":"Name","value":"magneticButton"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"headerTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"imageTitle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageLocation"}},{"kind":"Field","name":{"kind":"Name","value":"imageStyle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"format"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"mobileColumns"}},{"kind":"Field","name":{"kind":"Name","value":"tabletColumns"}},{"kind":"Field","name":{"kind":"Name","value":"desktopColumns"}},{"kind":"Field","name":{"kind":"Name","value":"gap"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sections"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"YoutubeVideoFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"providerUid"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HairMenuFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"priceModules"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PriceModulesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BiographyFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"StringValue","value":"440","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"StringValue","value":"590","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"bioDescription"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"FooterFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"location"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","name":{"kind":"Name","value":"openingHours"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"info"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<HomePageQuery, HomePageQueryVariables>;
 export const MobileMenuCtaDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"MobileMenuCta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"mobileMenuCta"}},{"kind":"Field","name":{"kind":"Name","value":"mobileMenuCtaText"}},{"kind":"Field","name":{"kind":"Name","value":"mobileMennuCtaUrl"}}]}}]}}]} as unknown as DocumentNode<MobileMenuCtaQuery, MobileMenuCtaQueryVariables>;
 export const SocialsDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Socials"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"socialMediaLinks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"width"}}]}}]}}]}}]}}]} as unknown as DocumentNode<SocialsQuery, SocialsQueryVariables>;
 export type BiographyFragmentFragment = { __typename: 'BiographyRecord', id: any, navigationId?: string | null, fadeIn: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, bioDescription?: { __typename?: 'BiographyModelBioDescriptionField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null }> } | null };
 
 export type FooterFragmentFragment = { __typename: 'FooterRecord', id: any, navigationId?: string | null, address?: { __typename?: 'FooterModelAddressField', value: any } | null, contact?: { __typename?: 'FooterModelContactField', value: any } | null, location?: { __typename?: 'LatLonField', latitude: any, longitude: any } | null, openingHours?: { __typename?: 'FooterModelOpeningHoursField', value: any } | null, info?: { __typename?: 'FooterModelInfoField', value: any } | null };
 
-export type GridFragmentFragment = { __typename: 'GridRecord', navigationId?: string | null, backgroundColor: any, fadeIn: any, id: any, title?: string | null, mobileColumns?: string | null, tabletColumns?: string | null, desktopColumns?: string | null, gap?: string | null, fullWidth: any, height?: string | null, sections: Array<{ __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'GridTextRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, content?: { __typename?: 'GridTextModelContentField', value: any, blocks: Array<{ __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null }> };
+export type GridFragmentFragment = { __typename: 'GridRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, title?: string | null, mobileColumns?: string | null, tabletColumns?: string | null, desktopColumns?: string | null, gap?: string | null, fullWidth: any, height?: string | null, sections: Array<{ __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'GridTextRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, content?: { __typename?: 'GridTextModelContentField', value: any, blocks: Array<{ __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null }> };
 
 export type GridImageFragmentFragment = { __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
@@ -3132,11 +3291,11 @@ export type PricesFragmentFragment = { __typename?: 'PriceRecord', id: any, trea
 
 export type HeroFragmentFragment = { __typename: 'HeroRecord', id: any, navigationId?: string | null, buttonText?: string | null, buttonLink?: string | null, magneticButton: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, backgroundImage?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
-export type ImageFragmentFragment = { __typename: 'ImageRecord', navigationId?: string | null, backgroundColor: any, fadeIn: any, imageTitle?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
+export type ImageFragmentFragment = { __typename: 'ImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageTitle?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
-export type TextFragmentFragment = { __typename: 'TextRecord', navigationId?: string | null, headerTitle: any, backgroundColor: any, fullWidth: any, fadeIn: any, content?: { __typename?: 'TextModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null };
+export type TextFragmentFragment = { __typename: 'TextRecord', id: any, navigationId?: string | null, headerTitle: any, backgroundColor: any, fullWidth: any, fadeIn: any, content?: { __typename?: 'TextModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null };
 
-export type TextImageFragmentFragment = { __typename: 'TextImageRecord', navigationId?: string | null, backgroundColor: any, fadeIn: any, imageLocation?: string | null, imageStyle?: string | null, content?: { __typename?: 'TextImageModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
+export type TextImageFragmentFragment = { __typename: 'TextImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageLocation?: string | null, imageStyle?: string | null, content?: { __typename?: 'TextImageModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
 export type YoutubeVideoFragmentFragment = { __typename: 'YoutubeVideoRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, link?: { __typename?: 'VideoField', providerUid: string } | null };
 
@@ -3156,7 +3315,7 @@ export type responsiveImageFragmentFragment = { __typename?: 'ResponsiveImage', 
 export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HomePageQuery = { __typename?: 'Query', site: { __typename?: 'Site', favicon: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }> }, page?: { __typename?: 'PageRecord', id: any, name?: string | null, seo: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }>, content: Array<{ __typename: 'BiographyRecord', id: any, navigationId?: string | null, fadeIn: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, bioDescription?: { __typename?: 'BiographyModelBioDescriptionField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null }> } | null } | { __typename: 'FooterRecord', id: any, navigationId?: string | null, address?: { __typename?: 'FooterModelAddressField', value: any } | null, contact?: { __typename?: 'FooterModelContactField', value: any } | null, location?: { __typename?: 'LatLonField', latitude: any, longitude: any } | null, openingHours?: { __typename?: 'FooterModelOpeningHoursField', value: any } | null, info?: { __typename?: 'FooterModelInfoField', value: any } | null } | { __typename: 'GridRecord', navigationId?: string | null, backgroundColor: any, fadeIn: any, id: any, title?: string | null, mobileColumns?: string | null, tabletColumns?: string | null, desktopColumns?: string | null, gap?: string | null, fullWidth: any, height?: string | null, sections: Array<{ __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'GridTextRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, content?: { __typename?: 'GridTextModelContentField', value: any, blocks: Array<{ __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null }> } | { __typename: 'HairMenuRecord', id: any, navigationId?: string | null, fadeIn: any, priceModules: Array<{ __typename: 'PriceModuleRecord', id: any, heading?: string | null, prices: Array<{ __typename?: 'PriceRecord', id: any, treatment?: string | null, price?: any | null, from: any, description?: { __typename?: 'PriceModelDescriptionField', value: any } | null }> }> } | { __typename: 'HeroRecord', id: any, navigationId?: string | null, buttonText?: string | null, buttonLink?: string | null, magneticButton: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, backgroundImage?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'ImageRecord', navigationId?: string | null, backgroundColor: any, fadeIn: any, imageTitle?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'TextImageRecord', navigationId?: string | null, backgroundColor: any, fadeIn: any, imageLocation?: string | null, imageStyle?: string | null, content?: { __typename?: 'TextImageModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'TextRecord', navigationId?: string | null, headerTitle: any, backgroundColor: any, fullWidth: any, fadeIn: any, content?: { __typename?: 'TextModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null } | { __typename: 'YoutubeVideoRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, link?: { __typename?: 'VideoField', providerUid: string } | null }> } | null };
+export type HomePageQuery = { __typename?: 'Query', site: { __typename?: 'Site', favicon: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }> }, page?: { __typename?: 'PageRecord', id: any, name?: string | null, seo: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }>, content: Array<{ __typename: 'BiographyRecord', id: any, navigationId?: string | null, fadeIn: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, bioDescription?: { __typename?: 'BiographyModelBioDescriptionField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null }> } | null } | { __typename: 'FooterRecord', id: any, navigationId?: string | null, address?: { __typename?: 'FooterModelAddressField', value: any } | null, contact?: { __typename?: 'FooterModelContactField', value: any } | null, location?: { __typename?: 'LatLonField', latitude: any, longitude: any } | null, openingHours?: { __typename?: 'FooterModelOpeningHoursField', value: any } | null, info?: { __typename?: 'FooterModelInfoField', value: any } | null } | { __typename: 'GridRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, title?: string | null, mobileColumns?: string | null, tabletColumns?: string | null, desktopColumns?: string | null, gap?: string | null, fullWidth: any, height?: string | null, sections: Array<{ __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'GridTextRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, content?: { __typename?: 'GridTextModelContentField', value: any, blocks: Array<{ __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null }> } | { __typename: 'HairMenuRecord', id: any, navigationId?: string | null, fadeIn: any, priceModules: Array<{ __typename: 'PriceModuleRecord', id: any, heading?: string | null, prices: Array<{ __typename?: 'PriceRecord', id: any, treatment?: string | null, price?: any | null, from: any, description?: { __typename?: 'PriceModelDescriptionField', value: any } | null }> }> } | { __typename: 'HeroRecord', id: any, navigationId?: string | null, buttonText?: string | null, buttonLink?: string | null, magneticButton: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, backgroundImage?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'ImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageTitle?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'TextImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageLocation?: string | null, imageStyle?: string | null, content?: { __typename?: 'TextImageModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'TextRecord', id: any, navigationId?: string | null, headerTitle: any, backgroundColor: any, fullWidth: any, fadeIn: any, content?: { __typename?: 'TextModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null } | { __typename: 'YoutubeVideoRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, link?: { __typename?: 'VideoField', providerUid: string } | null }> } | null };
 
 export type MobileMenuCtaQueryVariables = Exact<{ [key: string]: never; }>;
 

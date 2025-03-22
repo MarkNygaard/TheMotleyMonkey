@@ -1,9 +1,9 @@
 fragment GridFragment on GridRecord {
   __typename
+  id
   navigationId
   backgroundColor
   fadeIn
-  id
   title
   mobileColumns
   tabletColumns

@@ -1,5 +1,6 @@
 fragment TextFragment on TextRecord {
   __typename
+  id
   navigationId
   headerTitle
   backgroundColor

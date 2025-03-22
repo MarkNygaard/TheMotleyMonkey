@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  swcMinify: true,
+  reactStrictMode: process.env.NODE_ENV === 'development' ? false : true,
   images: {
     domains: ['www.datocms-assets.com'],
   },

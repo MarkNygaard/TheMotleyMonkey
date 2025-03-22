@@ -1,5 +1,6 @@
 fragment ImageFragment on ImageRecord {
   __typename
+  id
   navigationId
   backgroundColor
   fadeIn
