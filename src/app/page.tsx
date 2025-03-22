@@ -10,7 +10,20 @@ import { toNextMetadata } from 'react-datocms';
 export async function generateMetadata(): Promise<Metadata> {
   const data = await queryDatoCMS(HomePageDocument);
 
-  return toNextMetadata(data?.page?.seo || []);
+  const seoMetadata = toNextMetadata(data?.page?.seo || []);
+  const canonicalUrl = `https://www.themotleymonkey.dk/`;
+
+  return {
+    ...seoMetadata,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+    },
+  };
 }
 
 export default async function Home() {
