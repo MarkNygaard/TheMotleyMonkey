@@ -8,7 +8,6 @@ import { useAnimatedSectionInView } from 'lib/hooks';
 import React from 'react';
 
 export default function Text({
-  id,
   navigationId,
   headerTitle = false,
   backgroundColor,
@@ -25,7 +24,6 @@ export default function Text({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      key={id}
       className={clsx(
         'align-center flex flex-col items-center justify-center overflow-hidden px-4 py-10 md:px-10',
         {

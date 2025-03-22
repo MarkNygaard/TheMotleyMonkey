@@ -30,6 +30,7 @@ export default function RealTimeSections({
 
   return (
     <Sections
+      key='real-time-sections'
       sections={data.page.content as Array<PageModelContentField>}
       firstSection={data.page?.content[1]?.navigationId}
     />

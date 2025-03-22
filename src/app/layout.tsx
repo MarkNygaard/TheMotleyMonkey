@@ -17,13 +17,14 @@ import { draftMode } from 'next/headers';
 
 import '../styles/globals.css';
 
+export const viewport = {
+  width: 'device-width',
+  viewportFit: 'cover',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata = {
-  viewport: {
-    width: 'device-width',
-    viewportFit: 'cover',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   appleMobileWebAppStatusBarStyle: {
     blackTranslucent: true,
   },
@@ -79,7 +80,7 @@ export default async function RootLayout({
               socials.layout?.socialMediaLinks as Array<LinkRecord>
             }
           />
-          {children}
+          <div className='bg-skin-primary'>{children}</div>
           <Analytics />
         </body>
       </ActiveSectionContextProvider>

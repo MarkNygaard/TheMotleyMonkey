@@ -83,7 +83,7 @@ export default function PriceModule({
         {prices.map((priceContent: PriceRecord) => {
           return (
             <Prices
-              key={priceContent.id}
+              key={`price-${priceContent.id}`}
               {...priceContent}
               arrayLength={prices.length}
             />

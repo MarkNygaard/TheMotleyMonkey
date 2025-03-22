@@ -10,7 +10,20 @@ import { toNextMetadata } from 'react-datocms';
 export async function generateMetadata(): Promise<Metadata> {
   const data = await queryDatoCMS(HomePageDocument);
 
-  return toNextMetadata(data?.page?.seo || []);
+  const seoMetadata = toNextMetadata(data?.page?.seo || []);
+  const canonicalUrl = `https://www.themotleymonkey.dk/`;
+
+  return {
+    ...seoMetadata,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+    },
+  };
 }
 
 export default async function Home() {
@@ -19,21 +32,17 @@ export default async function Home() {
 
   if (!data?.page) notFound();
 
-  return (
-    <div className='bg-skin-primary'>
-      {!isEnabled && (
-        <Sections
-          sections={data.page?.content as Array<PageModelContentField>}
-          firstSection={data.page?.content[1]?.navigationId}
-        />
-      )}
-      {isEnabled && (
-        <RealTimeSections
-          initialData={data}
-          token={process.env.DATOCMS_API_TOKEN || ''}
-          query={HomePageDocument}
-        />
-      )}
-    </div>
+  return isEnabled ? (
+    <RealTimeSections
+      initialData={data}
+      token={process.env.DATOCMS_API_TOKEN || ''}
+      query={HomePageDocument}
+    />
+  ) : (
+    <Sections
+      key='static-sections'
+      sections={data.page?.content as Array<PageModelContentField>}
+      firstSection={data.page?.content[1]?.navigationId}
+    />
   );
 }
