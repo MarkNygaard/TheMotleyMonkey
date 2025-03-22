@@ -1,5 +1,6 @@
 fragment TextImageFragment on TextImageRecord {
   __typename
+  id
   navigationId
   backgroundColor
   fadeIn

@@ -10,7 +10,6 @@ import { GridImage } from './GridImage';
 import { GridText } from './GridText';
 
 export default function Grid({
-  id,
   navigationId,
   backgroundColor,
   fadeIn,
@@ -31,7 +30,6 @@ export default function Grid({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      key={id}
       className={classNames('flex justify-center px-0 py-20 md:px-10', {
         'bg-skin-secondary': backgroundColor === true,
       })}
@@ -50,7 +48,7 @@ export default function Grid({
         {sections.map((section: GridModelSectionsField) => {
           return (
             <div
-              key={section.id}
+              key={`grid-${section.id}`}
               className={classNames('relative', {
                 [`order-${section.mobilePosition as string}`]:
                   section.mobilePosition,
@@ -61,11 +59,7 @@ export default function Grid({
               })}
             >
               {section.__typename === 'GridImageRecord' && (
-                <GridImage
-                  key={section.id}
-                  height={height as string}
-                  {...section}
-                />
+                <GridImage height={height as string} {...section} />
               )}
               {section.__typename === 'GridTextRecord' && (
                 <GridText

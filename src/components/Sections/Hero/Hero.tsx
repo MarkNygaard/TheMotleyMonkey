@@ -21,7 +21,6 @@ export type HeroProps = HeroRecord & {
 };
 
 export default function Hero({
-  id,
   navigationId,
   image,
   backgroundImage,
@@ -57,12 +56,7 @@ export default function Hero({
   let y = useTransform(scrollYProgress, scrollSpeed, ['0%', '100%']);
 
   return (
-    <div
-      ref={ref}
-      id={navigationIdNoSpace!}
-      key={id}
-      className='relative flex flex-col'
-    >
+    <div ref={ref} id={navigationIdNoSpace!} className='relative flex flex-col'>
       {backgroundImage && (
         <motion.div
           style={{ y }}

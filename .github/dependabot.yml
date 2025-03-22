@@ -6,11 +6,11 @@ updates:
       interval: 'weekly'
     ignore:
       - dependency-name: 'tailwindcss'
-        versions: ['4.x']
+        versions: ['>=4.0.0']
       - dependency-name: 'eslint'
-        versions: ['9.x']
+        versions: ['>=9.0.0']
       - dependency-name: 'tailwind-variants'
-        versions: ['1.x']
+        versions: ['>=1.0.0']
     commit-message:
       prefix: 'build(deps)'
   - package-ecosystem: 'github-actions'

@@ -1,7 +1,6 @@
 import { TypedDocumentNode } from '@graphql-typed-document-node/core';
 import { print } from 'graphql';
 
-
 export default async function queryDatoCMS<
   TResult = unknown,
   TVariables = Record<string, any>,

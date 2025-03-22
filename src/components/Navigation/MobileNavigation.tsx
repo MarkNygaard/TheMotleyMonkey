@@ -4,7 +4,11 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { Button } from '@ui/Button/Button';
 import SvgRenderer from 'components/SvgRenderer';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
-import { LinkRecord, MobileMenuCtaQuery, PageModelContentField } from 'lib/graphql';
+import {
+  LinkRecord,
+  MobileMenuCtaQuery,
+  PageModelContentField,
+} from 'lib/graphql';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -168,11 +172,7 @@ export default function MobileNavigation({
               }}
               className='fixed inset-0 bg-black/50'
             />
-            <NavigationMenu.Root
-              key='mobileNavigation'
-              orientation='vertical'
-              asChild
-            >
+            <NavigationMenu.Root orientation='vertical' asChild>
               <motion.div
                 initial={{ y: '-110vh', opacity: 1 }}
                 animate={{
@@ -250,7 +250,7 @@ export default function MobileNavigation({
                         return (
                           navigation.navigationId && (
                             <motion.div
-                              key={navigation.id}
+                              key={`mobile-${navigation.id}`}
                               initial={{ opacity: 0 }}
                               animate={{
                                 opacity: 1,
@@ -271,7 +271,7 @@ export default function MobileNavigation({
                             >
                               <NavigationMenu.Link asChild>
                                 <Link
-                                  className='block px-4 py-2 text-2xl font-normal text-white outline-none '
+                                  className='block px-4 py-2 text-2xl font-normal text-white outline-none'
                                   href={'#' + navigationIdNoSpace}
                                   onClick={onClick}
                                 >
@@ -288,7 +288,7 @@ export default function MobileNavigation({
                   </NavigationMenu.List>
                   {mobileMenuCta.layout?.mobileMenuCta && (
                     <NavigationMenu.List asChild>
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0 }}
                         animate={{
                           opacity: 1,
@@ -306,11 +306,21 @@ export default function MobileNavigation({
                             type: 'spring',
                           },
                         }}
-                        className='flex justify-center w-full'
+                        className='flex w-full justify-center'
                       >
                         <NavigationMenu.Link>
-                          <Link href={mobileMenuCta.layout?.mobileMennuCtaUrl ?? ""} target='_blank' rel='noreferrer'>
-                          <Button intent='secondary' width='large' label={mobileMenuCta.layout?.mobileMenuCtaText ?? ''} />
+                          <Link
+                            href={mobileMenuCta.layout?.mobileMennuCtaUrl ?? ''}
+                            target='_blank'
+                            rel='noreferrer'
+                          >
+                            <Button
+                              intent='secondary'
+                              width='large'
+                              label={
+                                mobileMenuCta.layout?.mobileMenuCtaText ?? ''
+                              }
+                            />
                           </Link>
                         </NavigationMenu.Link>
                       </motion.div>
@@ -339,7 +349,10 @@ export default function MobileNavigation({
                     >
                       {socialMediaLinks.map((links: LinkRecord) => {
                         return (
-                          <NavigationMenu.Link key={links.id} asChild>
+                          <NavigationMenu.Link
+                            key={`mobileSocial-${links.id}`}
+                            asChild
+                          >
                             <Link
                               aria-label='social-link'
                               target='_blank'

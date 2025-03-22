@@ -8,7 +8,6 @@ import React from 'react';
 import { Image } from 'react-datocms';
 
 export default function ImageSection({
-  id,
   navigationId,
   backgroundColor,
   fadeIn,
@@ -23,7 +22,6 @@ export default function ImageSection({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      key={id}
       className={classNames('px-2 py-20 md:px-10', {
         'bg-skin-secondary': backgroundColor === true,
       })}
