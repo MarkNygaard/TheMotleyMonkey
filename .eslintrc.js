@@ -5,12 +5,7 @@ module.exports = {
     node: true,
   },
   plugins: ['simple-import-sort', 'unused-imports'],
-  extends: [
-    'eslint:recommended',
-    'next',
-    'next/core-web-vitals',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'next', 'next/core-web-vitals', 'prettier'],
   rules: {
     'no-unused-vars': 'off',
     'no-console': 'warn',
