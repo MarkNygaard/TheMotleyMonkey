@@ -115,7 +115,7 @@ export default function Hero({
               href={'#' + firstSection}
               className='relative flex items-center justify-center text-4xl text-gray-300'
             >
-              <button className='rounded-full p-2 active:bg-gray-300/20'>
+              <button className='rounded-full p-2 transition-all duration-200 ease-in-out hover:-translate-y-1 active:bg-gray-300/20'>
                 <SlArrowDown />
               </button>
             </Link>
