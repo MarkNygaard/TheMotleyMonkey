@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'clsx';
 import { motion } from 'framer-motion';
 import { ImageRecord, ResponsiveImage } from 'lib/graphql';
 import { useAnimatedSectionInView } from 'lib/hooks';
+import { cn } from 'lib/utils';
 import React from 'react';
 import { Image } from 'react-datocms';
 
@@ -22,7 +22,7 @@ export default function ImageSection({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      className={classNames('px-2 py-20 md:px-10', {
+      className={cn('px-2 py-20 md:px-10', {
         'bg-skin-secondary': backgroundColor === true,
       })}
     >

@@ -1,10 +1,10 @@
 'use client';
 
 import StructuredText from '@ui/StructuredText/StructuredText';
-import classNames from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { BiographyRecord, ResponsiveImage } from 'lib/graphql';
 import { useAnimatedSectionInView } from 'lib/hooks';
+import { cn } from 'lib/utils';
 import React, { useState } from 'react';
 import { Image } from 'react-datocms';
 import { AiOutlineDownCircle, AiOutlineUpCircle } from 'react-icons/ai';
@@ -28,7 +28,7 @@ export default function Biography({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      className={classNames(
+      className={cn(
         'align-center flex flex-col items-center justify-center overflow-hidden px-2 text-gray-200 md:px-10 md:py-10',
       )}
     >

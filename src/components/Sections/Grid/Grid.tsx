@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'clsx';
 import { motion } from 'framer-motion';
 import { GridModelSectionsField, GridRecord, TextRecord } from 'lib/graphql';
 import { useAnimatedSectionInView } from 'lib/hooks';
+import { cn } from 'lib/utils';
 import React from 'react';
 
 import { GridImage } from './GridImage';
@@ -30,14 +30,14 @@ export default function Grid({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      className={classNames('flex justify-center px-0 py-20 md:px-10', {
+      className={cn('flex justify-center px-0 py-20 md:px-10', {
         'bg-skin-secondary': backgroundColor === true,
       })}
     >
       <motion.div
         initial={fadeIn ? { opacity: 0 } : { opacity: 1 }}
         animate={fadeIn ? fadeInAnimation : { opacity: 1 }}
-        className={classNames('grid', {
+        className={cn('grid', {
           [`grid-cols-${mobileColumns as string}`]: mobileColumns,
           [`md:grid-cols-${tabletColumns as string}`]: tabletColumns,
           [`xl:grid-cols-${desktopColumns as string}`]: desktopColumns,
@@ -49,7 +49,7 @@ export default function Grid({
           return (
             <div
               key={`grid-${section.id}`}
-              className={classNames('relative', {
+              className={cn('relative', {
                 [`order-${section.mobilePosition as string}`]:
                   section.mobilePosition,
                 [`md:order-${section.tabletPosition as string}`]:
