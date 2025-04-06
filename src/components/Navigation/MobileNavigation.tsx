@@ -2,7 +2,7 @@
 
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { Button } from '@ui/Button/Button';
-import SvgRenderer from 'components/SvgRenderer';
+import IconRenderer from 'components/IconRenderer';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import {
   LinkRecord,
@@ -348,6 +348,8 @@ export default function MobileNavigation({
                       className='flex w-full items-end pb-6'
                     >
                       {socialMediaLinks.map((links: LinkRecord) => {
+                        if (!links.icon) return null;
+
                         return (
                           <NavigationMenu.Link
                             key={`mobileSocial-${links.id}`}
@@ -358,9 +360,9 @@ export default function MobileNavigation({
                               target='_blank'
                               rel='noopener norefferer noreferrer'
                               href={links.url as string}
-                              className='flex grow justify-center text-base text-white'
+                              className='flex grow justify-center text-4xl text-white'
                             >
-                              <SvgRenderer url={links.icon?.url as string} />
+                              <IconRenderer iconData={links.icon} />
                             </Link>
                           </NavigationMenu.Link>
                         );

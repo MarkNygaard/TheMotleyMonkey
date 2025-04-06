@@ -1,45 +1,33 @@
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
-export type MakeEmpty<
-  T extends { [key: string]: unknown },
-  K extends keyof T,
-> = { [_ in K]?: never };
-export type Incremental<T> =
-  | T
-  | {
-      [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never;
-    };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string };
-  String: { input: string; output: string };
-  Boolean: { input: boolean; output: boolean };
-  Int: { input: number; output: number };
-  Float: { input: number; output: number };
-  BooleanType: { input: any; output: any };
-  CustomData: { input: any; output: any };
-  DateTime: { input: any; output: any };
-  FloatType: { input: any; output: any };
-  IntType: { input: any; output: any };
-  ItemId: { input: any; output: any };
-  JsonField: { input: any; output: any };
-  MetaTagAttributes: { input: any; output: any };
-  UploadId: { input: any; output: any };
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
+  BooleanType: { input: any; output: any; }
+  CustomData: { input: any; output: any; }
+  DateTime: { input: any; output: any; }
+  FloatType: { input: any; output: any; }
+  IntType: { input: any; output: any; }
+  ItemId: { input: any; output: any; }
+  JsonField: { input: any; output: any; }
+  MetaTagAttributes: { input: any; output: any; }
+  UploadId: { input: any; output: any; }
 };
 
 export type BiographyModelBioDescriptionField = {
   __typename?: 'BiographyModelBioDescriptionField';
   blocks: Array<CustomHeadingRecord>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -69,6 +57,7 @@ export type BiographyRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Biography (biography) */
 export type BiographyRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -91,7 +80,7 @@ export enum ColorBucketType {
   purple = 'purple',
   red = 'red',
   white = 'white',
-  yellow = 'yellow',
+  yellow = 'yellow'
 }
 
 export type ColorField = {
@@ -127,6 +116,7 @@ export type CustomHeadingRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Custom Heading (custom_heading) */
 export type CustomHeadingRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -135,7 +125,7 @@ export type CustomHeadingRecord_seoMetaTagsArgs = {
 export enum FaviconType {
   appleTouchIcon = 'appleTouchIcon',
   icon = 'icon',
-  msApplication = 'msApplication',
+  msApplication = 'msApplication'
 }
 
 export type FileField = FileFieldInterface & {
@@ -172,10 +162,12 @@ export type FileField = FileFieldInterface & {
   width?: Maybe<Scalars['IntType']['output']>;
 };
 
+
 export type FileFieldaltArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldblurUpThumbArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -184,15 +176,18 @@ export type FileFieldblurUpThumbArgs = {
   size?: Scalars['Int']['input'];
 };
 
+
 export type FileFieldcustomDataArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 export type FileFieldfocalPointArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldresponsiveImageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -201,10 +196,12 @@ export type FileFieldresponsiveImageArgs = {
   sizes?: InputMaybe<Scalars['String']['input']>;
 };
 
+
 export type FileFieldtitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldurlArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -243,10 +240,12 @@ export type FileFieldInterface = {
   width?: Maybe<Scalars['IntType']['output']>;
 };
 
+
 export type FileFieldInterfacealtArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldInterfaceblurUpThumbArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -255,15 +254,18 @@ export type FileFieldInterfaceblurUpThumbArgs = {
   size?: Scalars['Int']['input'];
 };
 
+
 export type FileFieldInterfacecustomDataArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 export type FileFieldInterfacefocalPointArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldInterfaceresponsiveImageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -272,10 +274,12 @@ export type FileFieldInterfaceresponsiveImageArgs = {
   sizes?: InputMaybe<Scalars['String']['input']>;
 };
 
+
 export type FileFieldInterfacetitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldInterfaceurlArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -284,6 +288,7 @@ export type FileFieldInterfaceurlArgs = {
 export type FooterModelAddressField = {
   __typename?: 'FooterModelAddressField';
   blocks: Array<Scalars['String']['output']>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -291,6 +296,7 @@ export type FooterModelAddressField = {
 export type FooterModelContactField = {
   __typename?: 'FooterModelContactField';
   blocks: Array<Scalars['String']['output']>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -298,6 +304,7 @@ export type FooterModelContactField = {
 export type FooterModelInfoField = {
   __typename?: 'FooterModelInfoField';
   blocks: Array<Scalars['String']['output']>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -305,6 +312,7 @@ export type FooterModelInfoField = {
 export type FooterModelOpeningHoursField = {
   __typename?: 'FooterModelOpeningHoursField';
   blocks: Array<Scalars['String']['output']>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -335,6 +343,7 @@ export type FooterRecord = RecordInterface & {
   openingHours?: Maybe<FooterModelOpeningHoursField>;
   updatedAt: Scalars['DateTime']['output'];
 };
+
 
 /** Block of type Footer (footer) */
 export type FooterRecord_seoMetaTagsArgs = {
@@ -376,6 +385,7 @@ export type GridImageRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Grid Image (grid_image) */
 export type GridImageRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -415,6 +425,7 @@ export type GridRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Grid (grid) */
 export type GridRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -423,6 +434,7 @@ export type GridRecord_seoMetaTagsArgs = {
 export type GridTextModelContentField = {
   __typename?: 'GridTextModelContentField';
   blocks: Array<RtImageRecord>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -453,6 +465,7 @@ export type GridTextRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Grid Text (grid_text) */
 export type GridTextRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -481,6 +494,7 @@ export type HairMenuRecord = RecordInterface & {
   priceModules: Array<PriceModuleRecord>;
   updatedAt: Scalars['DateTime']['output'];
 };
+
 
 /** Block of type Hair Menu (hair_menu) */
 export type HairMenuRecord_seoMetaTagsArgs = {
@@ -514,6 +528,7 @@ export type HeroRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Hero (hero) */
 export type HeroRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -544,6 +559,7 @@ export type ImageRecord = RecordInterface & {
   navigationId?: Maybe<Scalars['String']['output']>;
   updatedAt: Scalars['DateTime']['output'];
 };
+
 
 /** Block of type Image (image) */
 export type ImageRecord_seoMetaTagsArgs = {
@@ -1118,9 +1134,7 @@ export type ImgixParams = {
    *
    * [Open Imgix reference »](https://docs.imgix.com/apis/rendering/fill/fill-gradient-linear-direction)
    */
-  fillGradientLinearDirection?: InputMaybe<
-    Array<ImgixParamsFillGradientLinearDirection>
-  >;
+  fillGradientLinearDirection?: InputMaybe<Array<ImgixParamsFillGradientLinearDirection>>;
   /**
    * Fill Gradient Radial
    *
@@ -2127,12 +2141,12 @@ export enum ImgixParamsAuto {
   compress = 'compress',
   enhance = 'enhance',
   format = 'format',
-  redeye = 'redeye',
+  redeye = 'redeye'
 }
 
 export enum ImgixParamsBgRemoveFgType {
   auto = 'auto',
-  car = 'car',
+  car = 'car'
 }
 
 export enum ImgixParamsBlendAlign {
@@ -2141,7 +2155,7 @@ export enum ImgixParamsBlendAlign {
   left = 'left',
   middle = 'middle',
   right = 'right',
-  top = 'top',
+  top = 'top'
 }
 
 export enum ImgixParamsBlendCrop {
@@ -2149,7 +2163,7 @@ export enum ImgixParamsBlendCrop {
   faces = 'faces',
   left = 'left',
   right = 'right',
-  top = 'top',
+  top = 'top'
 }
 
 export enum ImgixParamsBlendFit {
@@ -2157,7 +2171,7 @@ export enum ImgixParamsBlendFit {
   clip = 'clip',
   crop = 'crop',
   max = 'max',
-  scale = 'scale',
+  scale = 'scale'
 }
 
 export enum ImgixParamsBlendMode {
@@ -2176,17 +2190,17 @@ export enum ImgixParamsBlendMode {
   overlay = 'overlay',
   saturation = 'saturation',
   screen = 'screen',
-  softlight = 'softlight',
+  softlight = 'softlight'
 }
 
 export enum ImgixParamsBlendSize {
-  inherit = 'inherit',
+  inherit = 'inherit'
 }
 
 export enum ImgixParamsCh {
   dpr = 'dpr',
   saveData = 'saveData',
-  width = 'width',
+  width = 'width'
 }
 
 export enum ImgixParamsCrop {
@@ -2197,7 +2211,7 @@ export enum ImgixParamsCrop {
   focalpoint = 'focalpoint',
   left = 'left',
   right = 'right',
-  top = 'top',
+  top = 'top'
 }
 
 export enum ImgixParamsCs {
@@ -2205,7 +2219,7 @@ export enum ImgixParamsCs {
   origin = 'origin',
   srgb = 'srgb',
   strip = 'strip',
-  tinysrgb = 'tinysrgb',
+  tinysrgb = 'tinysrgb'
 }
 
 export enum ImgixParamsFill {
@@ -2213,7 +2227,7 @@ export enum ImgixParamsFill {
   gen = 'gen',
   generative = 'generative',
   gradient = 'gradient',
-  solid = 'solid',
+  solid = 'solid'
 }
 
 export enum ImgixParamsFillGenPos {
@@ -2222,7 +2236,7 @@ export enum ImgixParamsFillGenPos {
   left = 'left',
   middle = 'middle',
   right = 'right',
-  top = 'top',
+  top = 'top'
 }
 
 export enum ImgixParamsFillGradientCs {
@@ -2230,19 +2244,19 @@ export enum ImgixParamsFillGradientCs {
   lch = 'lch',
   linear = 'linear',
   oklab = 'oklab',
-  srgb = 'srgb',
+  srgb = 'srgb'
 }
 
 export enum ImgixParamsFillGradientLinearDirection {
   bottom = 'bottom',
   left = 'left',
   right = 'right',
-  top = 'top',
+  top = 'top'
 }
 
 export enum ImgixParamsFillGradientType {
   linear = 'linear',
-  radial = 'radial',
+  radial = 'radial'
 }
 
 export enum ImgixParamsFit {
@@ -2254,13 +2268,13 @@ export enum ImgixParamsFit {
   fillmax = 'fillmax',
   max = 'max',
   min = 'min',
-  scale = 'scale',
+  scale = 'scale'
 }
 
 export enum ImgixParamsFlip {
   h = 'h',
   hv = 'hv',
-  v = 'v',
+  v = 'v'
 }
 
 export enum ImgixParamsFm {
@@ -2277,12 +2291,12 @@ export enum ImgixParamsFm {
   png8 = 'png8',
   png32 = 'png32',
   webm = 'webm',
-  webp = 'webp',
+  webp = 'webp'
 }
 
 export enum ImgixParamsIptc {
   allow = 'allow',
-  block = 'block',
+  block = 'block'
 }
 
 export enum ImgixParamsMarkAlign {
@@ -2291,7 +2305,7 @@ export enum ImgixParamsMarkAlign {
   left = 'left',
   middle = 'middle',
   right = 'right',
-  top = 'top',
+  top = 'top'
 }
 
 export enum ImgixParamsMarkFit {
@@ -2299,31 +2313,31 @@ export enum ImgixParamsMarkFit {
   crop = 'crop',
   fill = 'fill',
   max = 'max',
-  scale = 'scale',
+  scale = 'scale'
 }
 
 export enum ImgixParamsMarkTile {
-  grid = 'grid',
+  grid = 'grid'
 }
 
 export enum ImgixParamsPalette {
   css = 'css',
-  json = 'json',
+  json = 'json'
 }
 
 export enum ImgixParamsRotType {
   pivot = 'pivot',
-  straighten = 'straighten',
+  straighten = 'straighten'
 }
 
 export enum ImgixParamsTransparency {
-  grid = 'grid',
+  grid = 'grid'
 }
 
 export enum ImgixParamsTrim {
   alpha = 'alpha',
   auto = 'auto',
-  color = 'color',
+  color = 'color'
 }
 
 export enum ImgixParamsTxtAlign {
@@ -2332,18 +2346,18 @@ export enum ImgixParamsTxtAlign {
   left = 'left',
   middle = 'middle',
   right = 'right',
-  top = 'top',
+  top = 'top'
 }
 
 export enum ImgixParamsTxtClip {
   ellipsis = 'ellipsis',
   end = 'end',
   middle = 'middle',
-  start = 'start',
+  start = 'start'
 }
 
 export enum ImgixParamsTxtFit {
-  max = 'max',
+  max = 'max'
 }
 
 /** Specifies how to filter by usage */
@@ -2355,7 +2369,7 @@ export type InUseFilter = {
 export enum ItemStatus {
   draft = 'draft',
   published = 'published',
-  updated = 'updated',
+  updated = 'updated'
 }
 
 export type LatLonField = {
@@ -2392,6 +2406,7 @@ export type LayoutRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Record of type Layout (layout) */
 export type LayoutRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -2414,12 +2429,13 @@ export type LinkRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   createdAt: Scalars['DateTime']['output'];
-  icon?: Maybe<FileField>;
+  icon?: Maybe<Scalars['JsonField']['output']>;
   id: Scalars['ItemId']['output'];
   name?: Maybe<Scalars['String']['output']>;
   updatedAt: Scalars['DateTime']['output'];
   url?: Maybe<Scalars['String']['output']>;
 };
+
 
 /** Block of type 🌐  (link) */
 export type LinkRecord_seoMetaTagsArgs = {
@@ -2429,7 +2445,7 @@ export type LinkRecord_seoMetaTagsArgs = {
 export enum MuxThumbnailFormatType {
   gif = 'gif',
   jpg = 'jpg',
-  png = 'png',
+  png = 'png'
 }
 
 /** Specifies how to filter by image orientation */
@@ -2440,16 +2456,7 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>;
 };
 
-export type PageModelContentField =
-  | BiographyRecord
-  | FooterRecord
-  | GridRecord
-  | HairMenuRecord
-  | HeroRecord
-  | ImageRecord
-  | TextImageRecord
-  | TextRecord
-  | YoutubeVideoRecord;
+export type PageModelContentField = BiographyRecord | FooterRecord | GridRecord | HairMenuRecord | HeroRecord | ImageRecord | TextImageRecord | TextRecord | YoutubeVideoRecord;
 
 /** Record of type Page (page) */
 export type PageRecord = RecordInterface & {
@@ -2475,6 +2482,7 @@ export type PageRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Record of type Page (page) */
 export type PageRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -2483,6 +2491,7 @@ export type PageRecord_seoMetaTagsArgs = {
 export type PriceModelDescriptionField = {
   __typename?: 'PriceModelDescriptionField';
   blocks: Array<Scalars['String']['output']>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -2509,6 +2518,7 @@ export type PriceModuleRecord = RecordInterface & {
   prices: Array<PriceRecord>;
   updatedAt: Scalars['DateTime']['output'];
 };
+
 
 /** Block of type Price module (price_module) */
 export type PriceModuleRecord_seoMetaTagsArgs = {
@@ -2540,6 +2550,7 @@ export type PriceRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Price (price) */
 export type PriceRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -2562,17 +2573,20 @@ export type Query = {
   upload?: Maybe<FileField>;
 };
 
+
 /** The query root for this schema */
 export type Query_allUploadsMetaArgs = {
   filter?: InputMaybe<UploadFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 /** The query root for this schema */
 export type Query_siteArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type QueryallUploadsArgs = {
@@ -2584,17 +2598,20 @@ export type QueryallUploadsArgs = {
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
+
 /** The query root for this schema */
 export type QuerylayoutArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 /** The query root for this schema */
 export type QuerypageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type QueryuploadArgs = {
@@ -2621,6 +2638,7 @@ export type RecordInterface = {
   id: Scalars['ItemId']['output'];
 };
 
+
 export type RecordInterface_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
@@ -2641,7 +2659,7 @@ export enum ResolutionType {
   icon = 'icon',
   large = 'large',
   medium = 'medium',
-  small = 'small',
+  small = 'small'
 }
 
 export type ResponsiveImage = {
@@ -2681,6 +2699,7 @@ export type RtImageRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type RT Image (rt_image) */
 export type RtImageRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -2704,9 +2723,11 @@ export type Site = {
   noIndex?: Maybe<Scalars['BooleanType']['output']>;
 };
 
+
 export type SitefaviconMetaTagsArgs = {
   variants?: InputMaybe<Array<InputMaybe<FaviconType>>>;
 };
+
 
 export type SiteglobalSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2714,7 +2735,7 @@ export type SiteglobalSeoArgs = {
 };
 
 export enum SiteLocale {
-  en = 'en',
+  en = 'en'
 }
 
 export type StringMatchesFilter = {
@@ -2730,13 +2751,12 @@ export type Tag = {
   tag: Scalars['String']['output'];
 };
 
-export type TextImageModelContentBlocksField =
-  | CustomHeadingRecord
-  | RtImageRecord;
+export type TextImageModelContentBlocksField = CustomHeadingRecord | RtImageRecord;
 
 export type TextImageModelContentField = {
   __typename?: 'TextImageModelContentField';
   blocks: Array<TextImageModelContentBlocksField>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -2769,6 +2789,7 @@ export type TextImageRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Text&image (text_image) */
 export type TextImageRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -2779,6 +2800,7 @@ export type TextModelContentBlocksField = CustomHeadingRecord | RtImageRecord;
 export type TextModelContentField = {
   __typename?: 'TextModelContentField';
   blocks: Array<TextModelContentBlocksField>;
+  inlineBlocks: Array<Scalars['String']['output']>;
   links: Array<Scalars['String']['output']>;
   value: Scalars['JsonField']['output'];
 };
@@ -2809,6 +2831,7 @@ export type TextRecord = RecordInterface & {
   navigationId?: Maybe<Scalars['String']['output']>;
   updatedAt: Scalars['DateTime']['output'];
 };
+
 
 /** Block of type Text (text) */
 export type TextRecord_seoMetaTagsArgs = {
@@ -3035,13 +3058,13 @@ export enum UploadOrderBy {
   resolution_ASC = 'resolution_ASC',
   resolution_DESC = 'resolution_DESC',
   size_ASC = 'size_ASC',
-  size_DESC = 'size_DESC',
+  size_DESC = 'size_DESC'
 }
 
 export enum UploadOrientation {
   landscape = 'landscape',
   portrait = 'portrait',
-  square = 'square',
+  square = 'square'
 }
 
 /** Specifies how to filter by size */
@@ -3100,7 +3123,7 @@ export enum UploadType {
   presentation = 'presentation',
   richtext = 'richtext',
   spreadsheet = 'spreadsheet',
-  video = 'video',
+  video = 'video'
 }
 
 /** Specifies how to filter by update datetime */
@@ -3137,10 +3160,12 @@ export type UploadVideoField = {
   width: Scalars['IntType']['output'];
 };
 
+
 export type UploadVideoFieldaltArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type UploadVideoFieldblurUpThumbArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -3149,14 +3174,17 @@ export type UploadVideoFieldblurUpThumbArgs = {
   size?: Scalars['Int']['input'];
 };
 
+
 export type UploadVideoFieldmp4UrlArgs = {
   exactRes?: InputMaybe<VideoMp4Res>;
   res?: InputMaybe<VideoMp4Res>;
 };
 
+
 export type UploadVideoFieldthumbnailUrlArgs = {
   format?: InputMaybe<MuxThumbnailFormatType>;
 };
+
 
 export type UploadVideoFieldtitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -3193,7 +3221,7 @@ export type VideoField = {
 export enum VideoMp4Res {
   high = 'high',
   low = 'low',
-  medium = 'medium',
+  medium = 'medium'
 }
 
 /** Block of type Youtube Video (youtube_video) */
@@ -3221,6 +3249,7 @@ export type YoutubeVideoRecord = RecordInterface & {
   updatedAt: Scalars['DateTime']['output'];
 };
 
+
 /** Block of type Youtube Video (youtube_video) */
 export type YoutubeVideoRecord_seoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -3232,4246 +3261,77 @@ export type focalPoint = {
   y: Scalars['FloatType']['output'];
 };
 
-export const responsiveImageFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<responsiveImageFragmentFragment, unknown>;
-export const BiographyFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'BiographyFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'BiographyRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'w' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '440',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'h' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '590',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'bioDescription' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'blocks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'subtitle' },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<BiographyFragmentFragment, unknown>;
-export const FooterFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'FooterFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'FooterRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'address' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'contact' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'location' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'latitude' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'longitude' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'openingHours' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'info' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<FooterFragmentFragment, unknown>;
-export const RtImageFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'RtImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RtImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'crop' },
-                            value: { kind: 'EnumValue', value: 'focalpoint' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'ar' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '1:1',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'minH' },
-                            value: { kind: 'IntValue', value: '384' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<RtImageFragmentFragment, unknown>;
-export const GridFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'GridFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'GridRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'mobileColumns' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'tabletColumns' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'desktopColumns' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'gap' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fullWidth' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'sections' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'InlineFragment',
-                  typeCondition: {
-                    kind: 'NamedType',
-                    name: { kind: 'Name', value: 'GridImageRecord' },
-                  },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'mobilePosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'tabletPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'desktopPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'image' },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'responsiveImage' },
-                              arguments: [
-                                {
-                                  kind: 'Argument',
-                                  name: { kind: 'Name', value: 'imgixParams' },
-                                  value: {
-                                    kind: 'ObjectValue',
-                                    fields: [
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'fit' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'crop',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'crop' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'focalpoint',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'ar' },
-                                        value: {
-                                          kind: 'StringValue',
-                                          value: '1:1',
-                                          block: false,
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'minH' },
-                                        value: {
-                                          kind: 'IntValue',
-                                          value: '384',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'auto' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'compress',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'fm' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'avif',
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                              selectionSet: {
-                                kind: 'SelectionSet',
-                                selections: [
-                                  {
-                                    kind: 'FragmentSpread',
-                                    name: {
-                                      kind: 'Name',
-                                      value: 'responsiveImageFragment',
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  kind: 'InlineFragment',
-                  typeCondition: {
-                    kind: 'NamedType',
-                    name: { kind: 'Name', value: 'GridTextRecord' },
-                  },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'mobilePosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'tabletPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'desktopPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'content' },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'value' },
-                            },
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'blocks' },
-                              selectionSet: {
-                                kind: 'SelectionSet',
-                                selections: [
-                                  {
-                                    kind: 'Field',
-                                    name: { kind: 'Name', value: '__typename' },
-                                  },
-                                  {
-                                    kind: 'InlineFragment',
-                                    typeCondition: {
-                                      kind: 'NamedType',
-                                      name: {
-                                        kind: 'Name',
-                                        value: 'RtImageRecord',
-                                      },
-                                    },
-                                    selectionSet: {
-                                      kind: 'SelectionSet',
-                                      selections: [
-                                        {
-                                          kind: 'FragmentSpread',
-                                          name: {
-                                            kind: 'Name',
-                                            value: 'RtImageFragment',
-                                          },
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'RtImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RtImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'crop' },
-                            value: { kind: 'EnumValue', value: 'focalpoint' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'ar' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '1:1',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'minH' },
-                            value: { kind: 'IntValue', value: '384' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<GridFragmentFragment, unknown>;
-export const GridImageFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'GridImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'GridImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'mobilePosition' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'tabletPosition' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'desktopPosition' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'crop' },
-                            value: { kind: 'EnumValue', value: 'focalpoint' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'ar' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '1:1',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'minH' },
-                            value: { kind: 'IntValue', value: '384' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<GridImageFragmentFragment, unknown>;
-export const GridTextFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'GridTextFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'GridTextRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'mobilePosition' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'tabletPosition' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'desktopPosition' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'content' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'blocks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'RtImageRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'RtImageFragment' },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'RtImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RtImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'crop' },
-                            value: { kind: 'EnumValue', value: 'focalpoint' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'ar' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '1:1',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'minH' },
-                            value: { kind: 'IntValue', value: '384' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<GridTextFragmentFragment, unknown>;
-export const PricesFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'PricesFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'PriceRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'treatment' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'description' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'price' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'from' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<PricesFragmentFragment, unknown>;
-export const PriceModulesFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'PriceModulesFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'PriceModuleRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'heading' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'prices' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'PricesFragment' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'PricesFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'PriceRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'treatment' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'description' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'price' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'from' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<PriceModulesFragmentFragment, unknown>;
-export const HairMenuFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'HairMenuFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'HairMenuRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'priceModules' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'PriceModulesFragment' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'PricesFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'PriceRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'treatment' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'description' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'price' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'from' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'PriceModulesFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'PriceModuleRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'heading' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'prices' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'PricesFragment' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<HairMenuFragmentFragment, unknown>;
-export const HeroFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'HeroFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'HeroRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'backgroundImage' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'q' },
-                            value: { kind: 'IntValue', value: '60' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'buttonText' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'buttonLink' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'magneticButton' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<HeroFragmentFragment, unknown>;
-export const ImageFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'ImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'imageTitle' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<ImageFragmentFragment, unknown>;
-export const CustomHeadingFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'CustomHeadingFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'CustomHeadingRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'subtitle' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<CustomHeadingFragmentFragment, unknown>;
-export const TextFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'TextFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'TextRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'headerTitle' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fullWidth' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'content' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'blocks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'RtImageRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'RtImageFragment' },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'CustomHeadingRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: {
-                                kind: 'Name',
-                                value: 'CustomHeadingFragment',
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'RtImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RtImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'crop' },
-                            value: { kind: 'EnumValue', value: 'focalpoint' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'ar' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '1:1',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'minH' },
-                            value: { kind: 'IntValue', value: '384' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'CustomHeadingFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'CustomHeadingRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'subtitle' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<TextFragmentFragment, unknown>;
-export const TextImageFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'TextImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'TextImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'content' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'blocks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'RtImageRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'id' },
-                            },
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'image' },
-                              selectionSet: {
-                                kind: 'SelectionSet',
-                                selections: [
-                                  {
-                                    kind: 'Field',
-                                    name: {
-                                      kind: 'Name',
-                                      value: 'responsiveImage',
-                                    },
-                                    arguments: [
-                                      {
-                                        kind: 'Argument',
-                                        name: {
-                                          kind: 'Name',
-                                          value: 'imgixParams',
-                                        },
-                                        value: {
-                                          kind: 'ObjectValue',
-                                          fields: [
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'fit',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'crop',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'crop',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'focalpoint',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'ar',
-                                              },
-                                              value: {
-                                                kind: 'StringValue',
-                                                value: '1:1',
-                                                block: false,
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'minH',
-                                              },
-                                              value: {
-                                                kind: 'IntValue',
-                                                value: '384',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'auto',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'compress',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'fm',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'avif',
-                                              },
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                    selectionSet: {
-                                      kind: 'SelectionSet',
-                                      selections: [
-                                        {
-                                          kind: 'FragmentSpread',
-                                          name: {
-                                            kind: 'Name',
-                                            value: 'responsiveImageFragment',
-                                          },
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'CustomHeadingRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: {
-                                kind: 'Name',
-                                value: 'CustomHeadingFragment',
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'imageLocation' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'imageStyle' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'format' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'CustomHeadingFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'CustomHeadingRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'subtitle' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<TextImageFragmentFragment, unknown>;
-export const YoutubeVideoFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'YoutubeVideoFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'YoutubeVideoRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'link' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'providerUid' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<YoutubeVideoFragmentFragment, unknown>;
-export const metaTagsFragmentFragmentDoc = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'metaTagsFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'Tag' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'attributes' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'content' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'tag' } },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<metaTagsFragmentFragment, unknown>;
-export const CustomColorsDocument = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'CustomColors' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'layout' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'primaryColor' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'red' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'green' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'blue' } },
-                    ],
-                  },
-                },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'secondaryColor' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'red' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'green' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'blue' } },
-                    ],
-                  },
-                },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'accentColor' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'red' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'green' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'blue' } },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<CustomColorsQuery, CustomColorsQueryVariables>;
-export const HomePageDocument = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'HomePage' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            alias: { kind: 'Name', value: 'site' },
-            name: { kind: 'Name', value: '_site' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  alias: { kind: 'Name', value: 'favicon' },
-                  name: { kind: 'Name', value: 'faviconMetaTags' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: { kind: 'Name', value: 'metaTagsFragment' },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'page' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  alias: { kind: 'Name', value: 'seo' },
-                  name: { kind: 'Name', value: '_seoMetaTags' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: { kind: 'Name', value: 'metaTagsFragment' },
-                      },
-                    ],
-                  },
-                },
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'content' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'HeroRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'HeroFragment' },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'TextRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'TextFragment' },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'ImageRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'ImageFragment' },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'TextImageRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: {
-                                kind: 'Name',
-                                value: 'TextImageFragment',
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'GridRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'GridFragment' },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'YoutubeVideoRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: {
-                                kind: 'Name',
-                                value: 'YoutubeVideoFragment',
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'HairMenuRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'HairMenuFragment' },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'BiographyRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: {
-                                kind: 'Name',
-                                value: 'BiographyFragment',
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'FooterRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'FooterFragment' },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'responsiveImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ResponsiveImage' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'src' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'base64' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'width' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'alt' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'RtImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'RtImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'crop' },
-                            value: { kind: 'EnumValue', value: 'focalpoint' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'ar' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '1:1',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'minH' },
-                            value: { kind: 'IntValue', value: '384' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'CustomHeadingFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'CustomHeadingRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'subtitle' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'PricesFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'PriceRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'treatment' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'description' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'price' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'from' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'PriceModulesFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'PriceModuleRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'heading' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'prices' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'PricesFragment' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'metaTagsFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'Tag' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'attributes' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'content' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'tag' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'HeroFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'HeroRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'backgroundImage' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'q' },
-                            value: { kind: 'IntValue', value: '60' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'buttonText' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'buttonLink' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'magneticButton' } },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'TextFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'TextRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'headerTitle' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fullWidth' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'content' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'blocks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'RtImageRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'RtImageFragment' },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'CustomHeadingRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: {
-                                kind: 'Name',
-                                value: 'CustomHeadingFragment',
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'ImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'imageTitle' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'TextImageFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'TextImageRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'content' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'blocks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'RtImageRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'id' },
-                            },
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'image' },
-                              selectionSet: {
-                                kind: 'SelectionSet',
-                                selections: [
-                                  {
-                                    kind: 'Field',
-                                    name: {
-                                      kind: 'Name',
-                                      value: 'responsiveImage',
-                                    },
-                                    arguments: [
-                                      {
-                                        kind: 'Argument',
-                                        name: {
-                                          kind: 'Name',
-                                          value: 'imgixParams',
-                                        },
-                                        value: {
-                                          kind: 'ObjectValue',
-                                          fields: [
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'fit',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'crop',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'crop',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'focalpoint',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'ar',
-                                              },
-                                              value: {
-                                                kind: 'StringValue',
-                                                value: '1:1',
-                                                block: false,
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'minH',
-                                              },
-                                              value: {
-                                                kind: 'IntValue',
-                                                value: '384',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'auto',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'compress',
-                                              },
-                                            },
-                                            {
-                                              kind: 'ObjectField',
-                                              name: {
-                                                kind: 'Name',
-                                                value: 'fm',
-                                              },
-                                              value: {
-                                                kind: 'EnumValue',
-                                                value: 'avif',
-                                              },
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                    selectionSet: {
-                                      kind: 'SelectionSet',
-                                      selections: [
-                                        {
-                                          kind: 'FragmentSpread',
-                                          name: {
-                                            kind: 'Name',
-                                            value: 'responsiveImageFragment',
-                                          },
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'CustomHeadingRecord' },
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: {
-                                kind: 'Name',
-                                value: 'CustomHeadingFragment',
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          { kind: 'Field', name: { kind: 'Name', value: 'imageLocation' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'imageStyle' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'format' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'GridFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'GridRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'mobileColumns' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'tabletColumns' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'desktopColumns' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'gap' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fullWidth' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'height' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'sections' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'InlineFragment',
-                  typeCondition: {
-                    kind: 'NamedType',
-                    name: { kind: 'Name', value: 'GridImageRecord' },
-                  },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'mobilePosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'tabletPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'desktopPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'image' },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'responsiveImage' },
-                              arguments: [
-                                {
-                                  kind: 'Argument',
-                                  name: { kind: 'Name', value: 'imgixParams' },
-                                  value: {
-                                    kind: 'ObjectValue',
-                                    fields: [
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'fit' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'crop',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'crop' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'focalpoint',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'ar' },
-                                        value: {
-                                          kind: 'StringValue',
-                                          value: '1:1',
-                                          block: false,
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'minH' },
-                                        value: {
-                                          kind: 'IntValue',
-                                          value: '384',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'auto' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'compress',
-                                        },
-                                      },
-                                      {
-                                        kind: 'ObjectField',
-                                        name: { kind: 'Name', value: 'fm' },
-                                        value: {
-                                          kind: 'EnumValue',
-                                          value: 'avif',
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                              selectionSet: {
-                                kind: 'SelectionSet',
-                                selections: [
-                                  {
-                                    kind: 'FragmentSpread',
-                                    name: {
-                                      kind: 'Name',
-                                      value: 'responsiveImageFragment',
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-                {
-                  kind: 'InlineFragment',
-                  typeCondition: {
-                    kind: 'NamedType',
-                    name: { kind: 'Name', value: 'GridTextRecord' },
-                  },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'mobilePosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'tabletPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'desktopPosition' },
-                      },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'content' },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'value' },
-                            },
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'blocks' },
-                              selectionSet: {
-                                kind: 'SelectionSet',
-                                selections: [
-                                  {
-                                    kind: 'Field',
-                                    name: { kind: 'Name', value: '__typename' },
-                                  },
-                                  {
-                                    kind: 'InlineFragment',
-                                    typeCondition: {
-                                      kind: 'NamedType',
-                                      name: {
-                                        kind: 'Name',
-                                        value: 'RtImageRecord',
-                                      },
-                                    },
-                                    selectionSet: {
-                                      kind: 'SelectionSet',
-                                      selections: [
-                                        {
-                                          kind: 'FragmentSpread',
-                                          name: {
-                                            kind: 'Name',
-                                            value: 'RtImageFragment',
-                                          },
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'YoutubeVideoFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'YoutubeVideoRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'backgroundColor' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'link' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'providerUid' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'HairMenuFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'HairMenuRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'priceModules' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'FragmentSpread',
-                  name: { kind: 'Name', value: 'PriceModulesFragment' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'BiographyFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'BiographyRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'fadeIn' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'image' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'responsiveImage' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'imgixParams' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fit' },
-                            value: { kind: 'EnumValue', value: 'crop' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'w' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '440',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'h' },
-                            value: {
-                              kind: 'StringValue',
-                              value: '590',
-                              block: false,
-                            },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'fm' },
-                            value: { kind: 'EnumValue', value: 'avif' },
-                          },
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'auto' },
-                            value: { kind: 'EnumValue', value: 'compress' },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'FragmentSpread',
-                        name: {
-                          kind: 'Name',
-                          value: 'responsiveImageFragment',
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'bioDescription' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'blocks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: '__typename' },
-                      },
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'subtitle' },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'FooterFragment' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'FooterRecord' },
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'navigationId' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'address' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'contact' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'location' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'latitude' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'longitude' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'openingHours' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'info' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'value' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<HomePageQuery, HomePageQueryVariables>;
-export const MobileMenuCtaDocument = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'MobileMenuCta' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'layout' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'mobileMenuCta' },
-                },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'mobileMenuCtaText' },
-                },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'mobileMennuCtaUrl' },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<MobileMenuCtaQuery, MobileMenuCtaQueryVariables>;
-export const SocialsDocument = /*#__PURE__*/ {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'Socials' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'layout' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'socialMediaLinks' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'name' } },
-                      { kind: 'Field', name: { kind: 'Name', value: 'url' } },
-                      {
-                        kind: 'Field',
-                        name: { kind: 'Name', value: 'icon' },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'url' },
-                            },
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'height' },
-                            },
-                            {
-                              kind: 'Field',
-                              name: { kind: 'Name', value: 'width' },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<SocialsQuery, SocialsQueryVariables>;
-export type BiographyFragmentFragment = {
-  __typename: 'BiographyRecord';
-  id: any;
-  navigationId?: string | null;
-  fadeIn: any;
-  image?: {
-    __typename?: 'FileField';
-    responsiveImage?: {
-      __typename?: 'ResponsiveImage';
-      src: string;
-      base64?: string | null;
-      width: any;
-      height: any;
-      alt?: string | null;
-      title?: string | null;
-    } | null;
-  } | null;
-  bioDescription?: {
-    __typename?: 'BiographyModelBioDescriptionField';
-    value: any;
-    blocks: Array<{
-      __typename: 'CustomHeadingRecord';
-      id: any;
-      title?: string | null;
-      subtitle?: string | null;
-    }>;
-  } | null;
-};
+export const responsiveImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<responsiveImageFragmentFragment, unknown>;
+export const BiographyFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BiographyFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"StringValue","value":"440","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"StringValue","value":"590","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"bioDescription"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<BiographyFragmentFragment, unknown>;
+export const FooterFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"FooterFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"location"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","name":{"kind":"Name","value":"openingHours"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"info"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<FooterFragmentFragment, unknown>;
+export const RtImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<RtImageFragmentFragment, unknown>;
+export const GridFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"mobileColumns"}},{"kind":"Field","name":{"kind":"Name","value":"tabletColumns"}},{"kind":"Field","name":{"kind":"Name","value":"desktopColumns"}},{"kind":"Field","name":{"kind":"Name","value":"gap"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sections"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}}]} as unknown as DocumentNode<GridFragmentFragment, unknown>;
+export const GridImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<GridImageFragmentFragment, unknown>;
+export const GridTextFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridTextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}}]} as unknown as DocumentNode<GridTextFragmentFragment, unknown>;
+export const PricesFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}}]} as unknown as DocumentNode<PricesFragmentFragment, unknown>;
+export const PriceModulesFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PriceModulesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceModuleRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"prices"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PricesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}}]} as unknown as DocumentNode<PriceModulesFragmentFragment, unknown>;
+export const HairMenuFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HairMenuFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"priceModules"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PriceModulesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PriceModulesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceModuleRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"prices"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PricesFragment"}}]}}]}}]} as unknown as DocumentNode<HairMenuFragmentFragment, unknown>;
+export const HeroFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HeroFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"backgroundImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"q"},"value":{"kind":"IntValue","value":"60"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"buttonLink"}},{"kind":"Field","name":{"kind":"Name","value":"magneticButton"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<HeroFragmentFragment, unknown>;
+export const ImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"imageTitle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<ImageFragmentFragment, unknown>;
+export const CustomHeadingFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<CustomHeadingFragmentFragment, unknown>;
+export const TextFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"headerTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<TextFragmentFragment, unknown>;
+export const TextImageFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageLocation"}},{"kind":"Field","name":{"kind":"Name","value":"imageStyle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"format"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]} as unknown as DocumentNode<TextImageFragmentFragment, unknown>;
+export const YoutubeVideoFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"YoutubeVideoFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"providerUid"}}]}}]}}]} as unknown as DocumentNode<YoutubeVideoFragmentFragment, unknown>;
+export const metaTagsFragmentFragmentDoc = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"metaTagsFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}}]} as unknown as DocumentNode<metaTagsFragmentFragment, unknown>;
+export const CustomColorsDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CustomColors"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"primaryColor"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"red"}},{"kind":"Field","name":{"kind":"Name","value":"green"}},{"kind":"Field","name":{"kind":"Name","value":"blue"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondaryColor"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"red"}},{"kind":"Field","name":{"kind":"Name","value":"green"}},{"kind":"Field","name":{"kind":"Name","value":"blue"}}]}},{"kind":"Field","name":{"kind":"Name","value":"accentColor"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"red"}},{"kind":"Field","name":{"kind":"Name","value":"green"}},{"kind":"Field","name":{"kind":"Name","value":"blue"}}]}}]}}]}}]} as unknown as DocumentNode<CustomColorsQuery, CustomColorsQueryVariables>;
+export const HomePageDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"HomePage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"site"},"name":{"kind":"Name","value":"_site"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"favicon"},"name":{"kind":"Name","value":"faviconMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"metaTagsFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"page"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"seo"},"name":{"kind":"Name","value":"_seoMetaTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"metaTagsFragment"}}]}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"HeroFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"TextFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"TextImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"GridFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"YoutubeVideoFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"HairMenuFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BiographyFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"FooterFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"responsiveImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ResponsiveImage"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"base64"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RtImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"CustomHeadingFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PricesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"treatment"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"from"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"PriceModulesFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PriceModuleRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"prices"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PricesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"metaTagsFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Tag"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"tag"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HeroFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"backgroundImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"q"},"value":{"kind":"IntValue","value":"60"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttonText"}},{"kind":"Field","name":{"kind":"Name","value":"buttonLink"}},{"kind":"Field","name":{"kind":"Name","value":"magneticButton"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"headerTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"imageTitle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TextImageFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"TextImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"CustomHeadingRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"CustomHeadingFragment"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"imageLocation"}},{"kind":"Field","name":{"kind":"Name","value":"imageStyle"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"format"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"GridFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"mobileColumns"}},{"kind":"Field","name":{"kind":"Name","value":"tabletColumns"}},{"kind":"Field","name":{"kind":"Name","value":"desktopColumns"}},{"kind":"Field","name":{"kind":"Name","value":"gap"}},{"kind":"Field","name":{"kind":"Name","value":"fullWidth"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"sections"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"crop"},"value":{"kind":"EnumValue","value":"focalpoint"}},{"kind":"ObjectField","name":{"kind":"Name","value":"ar"},"value":{"kind":"StringValue","value":"1:1","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"minH"},"value":{"kind":"IntValue","value":"384"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"GridTextRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"mobilePosition"}},{"kind":"Field","name":{"kind":"Name","value":"tabletPosition"}},{"kind":"Field","name":{"kind":"Name","value":"desktopPosition"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RtImageRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RtImageFragment"}}]}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"YoutubeVideoFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"YoutubeVideoRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundColor"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"providerUid"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HairMenuFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"HairMenuRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"priceModules"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"PriceModulesFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BiographyFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"BiographyRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"fadeIn"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"responsiveImage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"imgixParams"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fit"},"value":{"kind":"EnumValue","value":"crop"}},{"kind":"ObjectField","name":{"kind":"Name","value":"w"},"value":{"kind":"StringValue","value":"440","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"h"},"value":{"kind":"StringValue","value":"590","block":false}},{"kind":"ObjectField","name":{"kind":"Name","value":"fm"},"value":{"kind":"EnumValue","value":"avif"}},{"kind":"ObjectField","name":{"kind":"Name","value":"auto"},"value":{"kind":"EnumValue","value":"compress"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"responsiveImageFragment"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"bioDescription"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}},{"kind":"Field","name":{"kind":"Name","value":"blocks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subtitle"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"FooterFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"FooterRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"navigationId"}},{"kind":"Field","name":{"kind":"Name","value":"address"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"location"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","name":{"kind":"Name","value":"openingHours"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"info"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<HomePageQuery, HomePageQueryVariables>;
+export const MobileMenuCtaDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"MobileMenuCta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"mobileMenuCta"}},{"kind":"Field","name":{"kind":"Name","value":"mobileMenuCtaText"}},{"kind":"Field","name":{"kind":"Name","value":"mobileMennuCtaUrl"}}]}}]}}]} as unknown as DocumentNode<MobileMenuCtaQuery, MobileMenuCtaQueryVariables>;
+export const SocialsDocument = /*#__PURE__*/ {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Socials"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"socialMediaLinks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"icon"}}]}}]}}]}}]} as unknown as DocumentNode<SocialsQuery, SocialsQueryVariables>;
+export type BiographyFragmentFragment = { __typename: 'BiographyRecord', id: any, navigationId?: string | null, fadeIn: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, bioDescription?: { __typename?: 'BiographyModelBioDescriptionField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null }> } | null };
 
-export type FooterFragmentFragment = {
-  __typename: 'FooterRecord';
-  id: any;
-  navigationId?: string | null;
-  address?: { __typename?: 'FooterModelAddressField'; value: any } | null;
-  contact?: { __typename?: 'FooterModelContactField'; value: any } | null;
-  location?: {
-    __typename?: 'LatLonField';
-    latitude: any;
-    longitude: any;
-  } | null;
-  openingHours?: {
-    __typename?: 'FooterModelOpeningHoursField';
-    value: any;
-  } | null;
-  info?: { __typename?: 'FooterModelInfoField'; value: any } | null;
-};
+export type FooterFragmentFragment = { __typename: 'FooterRecord', id: any, navigationId?: string | null, address?: { __typename?: 'FooterModelAddressField', value: any } | null, contact?: { __typename?: 'FooterModelContactField', value: any } | null, location?: { __typename?: 'LatLonField', latitude: any, longitude: any } | null, openingHours?: { __typename?: 'FooterModelOpeningHoursField', value: any } | null, info?: { __typename?: 'FooterModelInfoField', value: any } | null };
 
-export type GridFragmentFragment = {
-  __typename: 'GridRecord';
-  id: any;
-  navigationId?: string | null;
-  backgroundColor: any;
-  fadeIn: any;
-  title?: string | null;
-  mobileColumns?: string | null;
-  tabletColumns?: string | null;
-  desktopColumns?: string | null;
-  gap?: string | null;
-  fullWidth: any;
-  height?: string | null;
-  sections: Array<
-    | {
-        __typename: 'GridImageRecord';
-        id: any;
-        mobilePosition?: any | null;
-        tabletPosition?: any | null;
-        desktopPosition?: any | null;
-        image?: {
-          __typename?: 'FileField';
-          responsiveImage?: {
-            __typename?: 'ResponsiveImage';
-            src: string;
-            base64?: string | null;
-            width: any;
-            height: any;
-            alt?: string | null;
-            title?: string | null;
-          } | null;
-        } | null;
-      }
-    | {
-        __typename: 'GridTextRecord';
-        id: any;
-        mobilePosition?: any | null;
-        tabletPosition?: any | null;
-        desktopPosition?: any | null;
-        content?: {
-          __typename?: 'GridTextModelContentField';
-          value: any;
-          blocks: Array<{
-            __typename: 'RtImageRecord';
-            id: any;
-            image?: {
-              __typename?: 'FileField';
-              responsiveImage?: {
-                __typename?: 'ResponsiveImage';
-                src: string;
-                base64?: string | null;
-                width: any;
-                height: any;
-                alt?: string | null;
-                title?: string | null;
-              } | null;
-            } | null;
-          }>;
-        } | null;
-      }
-  >;
-};
+export type GridFragmentFragment = { __typename: 'GridRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, title?: string | null, mobileColumns?: string | null, tabletColumns?: string | null, desktopColumns?: string | null, gap?: string | null, fullWidth: any, height?: string | null, sections: Array<{ __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'GridTextRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, content?: { __typename?: 'GridTextModelContentField', value: any, blocks: Array<{ __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null }> };
 
-export type GridImageFragmentFragment = {
-  __typename: 'GridImageRecord';
-  id: any;
-  mobilePosition?: any | null;
-  tabletPosition?: any | null;
-  desktopPosition?: any | null;
-  image?: {
-    __typename?: 'FileField';
-    responsiveImage?: {
-      __typename?: 'ResponsiveImage';
-      src: string;
-      base64?: string | null;
-      width: any;
-      height: any;
-      alt?: string | null;
-      title?: string | null;
-    } | null;
-  } | null;
-};
+export type GridImageFragmentFragment = { __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
-export type GridTextFragmentFragment = {
-  __typename: 'GridTextRecord';
-  id: any;
-  mobilePosition?: any | null;
-  tabletPosition?: any | null;
-  desktopPosition?: any | null;
-  content?: {
-    __typename?: 'GridTextModelContentField';
-    value: any;
-    blocks: Array<{
-      __typename: 'RtImageRecord';
-      id: any;
-      image?: {
-        __typename?: 'FileField';
-        responsiveImage?: {
-          __typename?: 'ResponsiveImage';
-          src: string;
-          base64?: string | null;
-          width: any;
-          height: any;
-          alt?: string | null;
-          title?: string | null;
-        } | null;
-      } | null;
-    }>;
-  } | null;
-};
+export type GridTextFragmentFragment = { __typename: 'GridTextRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, content?: { __typename?: 'GridTextModelContentField', value: any, blocks: Array<{ __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null };
 
-export type HairMenuFragmentFragment = {
-  __typename: 'HairMenuRecord';
-  id: any;
-  navigationId?: string | null;
-  fadeIn: any;
-  priceModules: Array<{
-    __typename: 'PriceModuleRecord';
-    id: any;
-    heading?: string | null;
-    prices: Array<{
-      __typename?: 'PriceRecord';
-      id: any;
-      treatment?: string | null;
-      price?: any | null;
-      from: any;
-      description?: {
-        __typename?: 'PriceModelDescriptionField';
-        value: any;
-      } | null;
-    }>;
-  }>;
-};
+export type HairMenuFragmentFragment = { __typename: 'HairMenuRecord', id: any, navigationId?: string | null, fadeIn: any, priceModules: Array<{ __typename: 'PriceModuleRecord', id: any, heading?: string | null, prices: Array<{ __typename?: 'PriceRecord', id: any, treatment?: string | null, price?: any | null, from: any, description?: { __typename?: 'PriceModelDescriptionField', value: any } | null }> }> };
 
-export type PriceModulesFragmentFragment = {
-  __typename: 'PriceModuleRecord';
-  id: any;
-  heading?: string | null;
-  prices: Array<{
-    __typename?: 'PriceRecord';
-    id: any;
-    treatment?: string | null;
-    price?: any | null;
-    from: any;
-    description?: {
-      __typename?: 'PriceModelDescriptionField';
-      value: any;
-    } | null;
-  }>;
-};
+export type PriceModulesFragmentFragment = { __typename: 'PriceModuleRecord', id: any, heading?: string | null, prices: Array<{ __typename?: 'PriceRecord', id: any, treatment?: string | null, price?: any | null, from: any, description?: { __typename?: 'PriceModelDescriptionField', value: any } | null }> };
 
-export type PricesFragmentFragment = {
-  __typename?: 'PriceRecord';
-  id: any;
-  treatment?: string | null;
-  price?: any | null;
-  from: any;
-  description?: {
-    __typename?: 'PriceModelDescriptionField';
-    value: any;
-  } | null;
-};
+export type PricesFragmentFragment = { __typename?: 'PriceRecord', id: any, treatment?: string | null, price?: any | null, from: any, description?: { __typename?: 'PriceModelDescriptionField', value: any } | null };
 
-export type HeroFragmentFragment = {
-  __typename: 'HeroRecord';
-  id: any;
-  navigationId?: string | null;
-  buttonText?: string | null;
-  buttonLink?: string | null;
-  magneticButton: any;
-  image?: {
-    __typename?: 'FileField';
-    responsiveImage?: {
-      __typename?: 'ResponsiveImage';
-      src: string;
-      base64?: string | null;
-      width: any;
-      height: any;
-      alt?: string | null;
-      title?: string | null;
-    } | null;
-  } | null;
-  backgroundImage?: {
-    __typename?: 'FileField';
-    responsiveImage?: {
-      __typename?: 'ResponsiveImage';
-      src: string;
-      base64?: string | null;
-      width: any;
-      height: any;
-      alt?: string | null;
-      title?: string | null;
-    } | null;
-  } | null;
-};
+export type HeroFragmentFragment = { __typename: 'HeroRecord', id: any, navigationId?: string | null, buttonText?: string | null, buttonLink?: string | null, magneticButton: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, backgroundImage?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
-export type ImageFragmentFragment = {
-  __typename: 'ImageRecord';
-  id: any;
-  navigationId?: string | null;
-  backgroundColor: any;
-  fadeIn: any;
-  imageTitle?: string | null;
-  image?: {
-    __typename?: 'FileField';
-    responsiveImage?: {
-      __typename?: 'ResponsiveImage';
-      src: string;
-      base64?: string | null;
-      width: any;
-      height: any;
-      alt?: string | null;
-      title?: string | null;
-    } | null;
-  } | null;
-};
+export type ImageFragmentFragment = { __typename: 'ImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageTitle?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
-export type TextFragmentFragment = {
-  __typename: 'TextRecord';
-  id: any;
-  navigationId?: string | null;
-  headerTitle: any;
-  backgroundColor: any;
-  fullWidth: any;
-  fadeIn: any;
-  content?: {
-    __typename?: 'TextModelContentField';
-    value: any;
-    blocks: Array<
-      | {
-          __typename: 'CustomHeadingRecord';
-          id: any;
-          title?: string | null;
-          subtitle?: string | null;
-        }
-      | {
-          __typename: 'RtImageRecord';
-          id: any;
-          image?: {
-            __typename?: 'FileField';
-            responsiveImage?: {
-              __typename?: 'ResponsiveImage';
-              src: string;
-              base64?: string | null;
-              width: any;
-              height: any;
-              alt?: string | null;
-              title?: string | null;
-            } | null;
-          } | null;
-        }
-    >;
-  } | null;
-};
+export type TextFragmentFragment = { __typename: 'TextRecord', id: any, navigationId?: string | null, headerTitle: any, backgroundColor: any, fullWidth: any, fadeIn: any, content?: { __typename?: 'TextModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null };
 
-export type TextImageFragmentFragment = {
-  __typename: 'TextImageRecord';
-  id: any;
-  navigationId?: string | null;
-  backgroundColor: any;
-  fadeIn: any;
-  imageLocation?: string | null;
-  imageStyle?: string | null;
-  content?: {
-    __typename?: 'TextImageModelContentField';
-    value: any;
-    blocks: Array<
-      | {
-          __typename: 'CustomHeadingRecord';
-          id: any;
-          title?: string | null;
-          subtitle?: string | null;
-        }
-      | {
-          __typename: 'RtImageRecord';
-          id: any;
-          image?: {
-            __typename?: 'FileField';
-            responsiveImage?: {
-              __typename?: 'ResponsiveImage';
-              src: string;
-              base64?: string | null;
-              width: any;
-              height: any;
-              alt?: string | null;
-              title?: string | null;
-            } | null;
-          } | null;
-        }
-    >;
-  } | null;
-  image?: {
-    __typename?: 'FileField';
-    responsiveImage?: {
-      __typename?: 'ResponsiveImage';
-      src: string;
-      base64?: string | null;
-      width: any;
-      height: any;
-      alt?: string | null;
-      title?: string | null;
-    } | null;
-  } | null;
-};
+export type TextImageFragmentFragment = { __typename: 'TextImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageLocation?: string | null, imageStyle?: string | null, content?: { __typename?: 'TextImageModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
-export type YoutubeVideoFragmentFragment = {
-  __typename: 'YoutubeVideoRecord';
-  id: any;
-  navigationId?: string | null;
-  backgroundColor: any;
-  fadeIn: any;
-  link?: { __typename?: 'VideoField'; providerUid: string } | null;
-};
+export type YoutubeVideoFragmentFragment = { __typename: 'YoutubeVideoRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, link?: { __typename?: 'VideoField', providerUid: string } | null };
 
-export type CustomHeadingFragmentFragment = {
-  __typename?: 'CustomHeadingRecord';
-  id: any;
-  title?: string | null;
-  subtitle?: string | null;
-};
+export type CustomHeadingFragmentFragment = { __typename?: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null };
 
-export type RtImageFragmentFragment = {
-  __typename?: 'RtImageRecord';
-  id: any;
-  image?: {
-    __typename?: 'FileField';
-    responsiveImage?: {
-      __typename?: 'ResponsiveImage';
-      src: string;
-      base64?: string | null;
-      width: any;
-      height: any;
-      alt?: string | null;
-      title?: string | null;
-    } | null;
-  } | null;
-};
+export type RtImageFragmentFragment = { __typename?: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null };
 
-export type CustomColorsQueryVariables = Exact<{ [key: string]: never }>;
+export type CustomColorsQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type CustomColorsQuery = {
-  __typename?: 'Query';
-  layout?: {
-    __typename?: 'LayoutRecord';
-    primaryColor?: {
-      __typename?: 'ColorField';
-      red: any;
-      green: any;
-      blue: any;
-    } | null;
-    secondaryColor?: {
-      __typename?: 'ColorField';
-      red: any;
-      green: any;
-      blue: any;
-    } | null;
-    accentColor?: {
-      __typename?: 'ColorField';
-      red: any;
-      green: any;
-      blue: any;
-    } | null;
-  } | null;
-};
 
-export type metaTagsFragmentFragment = {
-  __typename?: 'Tag';
-  attributes?: any | null;
-  content?: string | null;
-  tag: string;
-};
+export type CustomColorsQuery = { __typename?: 'Query', layout?: { __typename?: 'LayoutRecord', primaryColor?: { __typename?: 'ColorField', red: any, green: any, blue: any } | null, secondaryColor?: { __typename?: 'ColorField', red: any, green: any, blue: any } | null, accentColor?: { __typename?: 'ColorField', red: any, green: any, blue: any } | null } | null };
 
-export type responsiveImageFragmentFragment = {
-  __typename?: 'ResponsiveImage';
-  src: string;
-  base64?: string | null;
-  width: any;
-  height: any;
-  alt?: string | null;
-  title?: string | null;
-};
+export type metaTagsFragmentFragment = { __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string };
 
-export type HomePageQueryVariables = Exact<{ [key: string]: never }>;
+export type responsiveImageFragmentFragment = { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null };
 
-export type HomePageQuery = {
-  __typename?: 'Query';
-  site: {
-    __typename?: 'Site';
-    favicon: Array<{
-      __typename?: 'Tag';
-      attributes?: any | null;
-      content?: string | null;
-      tag: string;
-    }>;
-  };
-  page?: {
-    __typename?: 'PageRecord';
-    id: any;
-    name?: string | null;
-    seo: Array<{
-      __typename?: 'Tag';
-      attributes?: any | null;
-      content?: string | null;
-      tag: string;
-    }>;
-    content: Array<
-      | {
-          __typename: 'BiographyRecord';
-          id: any;
-          navigationId?: string | null;
-          fadeIn: any;
-          image?: {
-            __typename?: 'FileField';
-            responsiveImage?: {
-              __typename?: 'ResponsiveImage';
-              src: string;
-              base64?: string | null;
-              width: any;
-              height: any;
-              alt?: string | null;
-              title?: string | null;
-            } | null;
-          } | null;
-          bioDescription?: {
-            __typename?: 'BiographyModelBioDescriptionField';
-            value: any;
-            blocks: Array<{
-              __typename: 'CustomHeadingRecord';
-              id: any;
-              title?: string | null;
-              subtitle?: string | null;
-            }>;
-          } | null;
-        }
-      | {
-          __typename: 'FooterRecord';
-          id: any;
-          navigationId?: string | null;
-          address?: {
-            __typename?: 'FooterModelAddressField';
-            value: any;
-          } | null;
-          contact?: {
-            __typename?: 'FooterModelContactField';
-            value: any;
-          } | null;
-          location?: {
-            __typename?: 'LatLonField';
-            latitude: any;
-            longitude: any;
-          } | null;
-          openingHours?: {
-            __typename?: 'FooterModelOpeningHoursField';
-            value: any;
-          } | null;
-          info?: { __typename?: 'FooterModelInfoField'; value: any } | null;
-        }
-      | {
-          __typename: 'GridRecord';
-          id: any;
-          navigationId?: string | null;
-          backgroundColor: any;
-          fadeIn: any;
-          title?: string | null;
-          mobileColumns?: string | null;
-          tabletColumns?: string | null;
-          desktopColumns?: string | null;
-          gap?: string | null;
-          fullWidth: any;
-          height?: string | null;
-          sections: Array<
-            | {
-                __typename: 'GridImageRecord';
-                id: any;
-                mobilePosition?: any | null;
-                tabletPosition?: any | null;
-                desktopPosition?: any | null;
-                image?: {
-                  __typename?: 'FileField';
-                  responsiveImage?: {
-                    __typename?: 'ResponsiveImage';
-                    src: string;
-                    base64?: string | null;
-                    width: any;
-                    height: any;
-                    alt?: string | null;
-                    title?: string | null;
-                  } | null;
-                } | null;
-              }
-            | {
-                __typename: 'GridTextRecord';
-                id: any;
-                mobilePosition?: any | null;
-                tabletPosition?: any | null;
-                desktopPosition?: any | null;
-                content?: {
-                  __typename?: 'GridTextModelContentField';
-                  value: any;
-                  blocks: Array<{
-                    __typename: 'RtImageRecord';
-                    id: any;
-                    image?: {
-                      __typename?: 'FileField';
-                      responsiveImage?: {
-                        __typename?: 'ResponsiveImage';
-                        src: string;
-                        base64?: string | null;
-                        width: any;
-                        height: any;
-                        alt?: string | null;
-                        title?: string | null;
-                      } | null;
-                    } | null;
-                  }>;
-                } | null;
-              }
-          >;
-        }
-      | {
-          __typename: 'HairMenuRecord';
-          id: any;
-          navigationId?: string | null;
-          fadeIn: any;
-          priceModules: Array<{
-            __typename: 'PriceModuleRecord';
-            id: any;
-            heading?: string | null;
-            prices: Array<{
-              __typename?: 'PriceRecord';
-              id: any;
-              treatment?: string | null;
-              price?: any | null;
-              from: any;
-              description?: {
-                __typename?: 'PriceModelDescriptionField';
-                value: any;
-              } | null;
-            }>;
-          }>;
-        }
-      | {
-          __typename: 'HeroRecord';
-          id: any;
-          navigationId?: string | null;
-          buttonText?: string | null;
-          buttonLink?: string | null;
-          magneticButton: any;
-          image?: {
-            __typename?: 'FileField';
-            responsiveImage?: {
-              __typename?: 'ResponsiveImage';
-              src: string;
-              base64?: string | null;
-              width: any;
-              height: any;
-              alt?: string | null;
-              title?: string | null;
-            } | null;
-          } | null;
-          backgroundImage?: {
-            __typename?: 'FileField';
-            responsiveImage?: {
-              __typename?: 'ResponsiveImage';
-              src: string;
-              base64?: string | null;
-              width: any;
-              height: any;
-              alt?: string | null;
-              title?: string | null;
-            } | null;
-          } | null;
-        }
-      | {
-          __typename: 'ImageRecord';
-          id: any;
-          navigationId?: string | null;
-          backgroundColor: any;
-          fadeIn: any;
-          imageTitle?: string | null;
-          image?: {
-            __typename?: 'FileField';
-            responsiveImage?: {
-              __typename?: 'ResponsiveImage';
-              src: string;
-              base64?: string | null;
-              width: any;
-              height: any;
-              alt?: string | null;
-              title?: string | null;
-            } | null;
-          } | null;
-        }
-      | {
-          __typename: 'TextImageRecord';
-          id: any;
-          navigationId?: string | null;
-          backgroundColor: any;
-          fadeIn: any;
-          imageLocation?: string | null;
-          imageStyle?: string | null;
-          content?: {
-            __typename?: 'TextImageModelContentField';
-            value: any;
-            blocks: Array<
-              | {
-                  __typename: 'CustomHeadingRecord';
-                  id: any;
-                  title?: string | null;
-                  subtitle?: string | null;
-                }
-              | {
-                  __typename: 'RtImageRecord';
-                  id: any;
-                  image?: {
-                    __typename?: 'FileField';
-                    responsiveImage?: {
-                      __typename?: 'ResponsiveImage';
-                      src: string;
-                      base64?: string | null;
-                      width: any;
-                      height: any;
-                      alt?: string | null;
-                      title?: string | null;
-                    } | null;
-                  } | null;
-                }
-            >;
-          } | null;
-          image?: {
-            __typename?: 'FileField';
-            responsiveImage?: {
-              __typename?: 'ResponsiveImage';
-              src: string;
-              base64?: string | null;
-              width: any;
-              height: any;
-              alt?: string | null;
-              title?: string | null;
-            } | null;
-          } | null;
-        }
-      | {
-          __typename: 'TextRecord';
-          id: any;
-          navigationId?: string | null;
-          headerTitle: any;
-          backgroundColor: any;
-          fullWidth: any;
-          fadeIn: any;
-          content?: {
-            __typename?: 'TextModelContentField';
-            value: any;
-            blocks: Array<
-              | {
-                  __typename: 'CustomHeadingRecord';
-                  id: any;
-                  title?: string | null;
-                  subtitle?: string | null;
-                }
-              | {
-                  __typename: 'RtImageRecord';
-                  id: any;
-                  image?: {
-                    __typename?: 'FileField';
-                    responsiveImage?: {
-                      __typename?: 'ResponsiveImage';
-                      src: string;
-                      base64?: string | null;
-                      width: any;
-                      height: any;
-                      alt?: string | null;
-                      title?: string | null;
-                    } | null;
-                  } | null;
-                }
-            >;
-          } | null;
-        }
-      | {
-          __typename: 'YoutubeVideoRecord';
-          id: any;
-          navigationId?: string | null;
-          backgroundColor: any;
-          fadeIn: any;
-          link?: { __typename?: 'VideoField'; providerUid: string } | null;
-        }
-    >;
-  } | null;
-};
+export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type MobileMenuCtaQueryVariables = Exact<{ [key: string]: never }>;
 
-export type MobileMenuCtaQuery = {
-  __typename?: 'Query';
-  layout?: {
-    __typename?: 'LayoutRecord';
-    mobileMenuCta: any;
-    mobileMenuCtaText?: string | null;
-    mobileMennuCtaUrl?: string | null;
-  } | null;
-};
+export type HomePageQuery = { __typename?: 'Query', site: { __typename?: 'Site', favicon: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }> }, page?: { __typename?: 'PageRecord', id: any, name?: string | null, seo: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }>, content: Array<{ __typename: 'BiographyRecord', id: any, navigationId?: string | null, fadeIn: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, bioDescription?: { __typename?: 'BiographyModelBioDescriptionField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null }> } | null } | { __typename: 'FooterRecord', id: any, navigationId?: string | null, address?: { __typename?: 'FooterModelAddressField', value: any } | null, contact?: { __typename?: 'FooterModelContactField', value: any } | null, location?: { __typename?: 'LatLonField', latitude: any, longitude: any } | null, openingHours?: { __typename?: 'FooterModelOpeningHoursField', value: any } | null, info?: { __typename?: 'FooterModelInfoField', value: any } | null } | { __typename: 'GridRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, title?: string | null, mobileColumns?: string | null, tabletColumns?: string | null, desktopColumns?: string | null, gap?: string | null, fullWidth: any, height?: string | null, sections: Array<{ __typename: 'GridImageRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'GridTextRecord', id: any, mobilePosition?: any | null, tabletPosition?: any | null, desktopPosition?: any | null, content?: { __typename?: 'GridTextModelContentField', value: any, blocks: Array<{ __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null }> } | { __typename: 'HairMenuRecord', id: any, navigationId?: string | null, fadeIn: any, priceModules: Array<{ __typename: 'PriceModuleRecord', id: any, heading?: string | null, prices: Array<{ __typename?: 'PriceRecord', id: any, treatment?: string | null, price?: any | null, from: any, description?: { __typename?: 'PriceModelDescriptionField', value: any } | null }> }> } | { __typename: 'HeroRecord', id: any, navigationId?: string | null, buttonText?: string | null, buttonLink?: string | null, magneticButton: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null, backgroundImage?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'ImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageTitle?: string | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'TextImageRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, imageLocation?: string | null, imageStyle?: string | null, content?: { __typename?: 'TextImageModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null } | { __typename: 'TextRecord', id: any, navigationId?: string | null, headerTitle: any, backgroundColor: any, fullWidth: any, fadeIn: any, content?: { __typename?: 'TextModelContentField', value: any, blocks: Array<{ __typename: 'CustomHeadingRecord', id: any, title?: string | null, subtitle?: string | null } | { __typename: 'RtImageRecord', id: any, image?: { __typename?: 'FileField', responsiveImage?: { __typename?: 'ResponsiveImage', src: string, base64?: string | null, width: any, height: any, alt?: string | null, title?: string | null } | null } | null }> } | null } | { __typename: 'YoutubeVideoRecord', id: any, navigationId?: string | null, backgroundColor: any, fadeIn: any, link?: { __typename?: 'VideoField', providerUid: string } | null }> } | null };
 
-export type SocialsQueryVariables = Exact<{ [key: string]: never }>;
+export type MobileMenuCtaQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type SocialsQuery = {
-  __typename?: 'Query';
-  layout?: {
-    __typename?: 'LayoutRecord';
-    socialMediaLinks: Array<{
-      __typename?: 'LinkRecord';
-      id: any;
-      name?: string | null;
-      url?: string | null;
-      icon?: {
-        __typename?: 'FileField';
-        url: string;
-        height?: any | null;
-        width?: any | null;
-      } | null;
-    }>;
-  } | null;
-};
+
+export type MobileMenuCtaQuery = { __typename?: 'Query', layout?: { __typename?: 'LayoutRecord', mobileMenuCta: any, mobileMenuCtaText?: string | null, mobileMennuCtaUrl?: string | null } | null };
+
+export type SocialsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SocialsQuery = { __typename?: 'Query', layout?: { __typename?: 'LayoutRecord', socialMediaLinks: Array<{ __typename?: 'LinkRecord', id: any, name?: string | null, url?: string | null, icon?: any | null }> } | null };
