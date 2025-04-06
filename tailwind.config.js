@@ -60,6 +60,21 @@ module.exports = {
           accent: withOpacity('--color-accent'),
         },
       },
+      gridTemplateRows: {
+        bio: '1fr 1fr 4fr 1fr',
+        bioText: '1fr 1fr 10fr 1fr',
+        bioTextMobile: '1fr 1fr 6fr 4fr',
+        footerXLarge: '1fr 3fr 3fr 1fr 1fr 1fr',
+        footerLarge: '1fr 3fr 3fr 3fr 1fr 1fr',
+        footerMedium: '4fr 3fr 4fr 1fr 1fr',
+        footerSmall: '4fr 4fr 3fr 3fr 3fr 1fr 1fr',
+      },
+      gridTemplateColumns: {
+        bio: '7fr 1fr 1fr 16fr 1fr',
+        bioText: '1fr 10fr 1fr',
+        footerLarge: '1fr 6fr 1fr 3fr 3fr 1fr',
+        footerMedium: '1fr 6fr 1fr 6fr 1fr',
+      },
       height: {
         132: '33rem',
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],
