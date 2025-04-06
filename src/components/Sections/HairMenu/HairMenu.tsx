@@ -1,8 +1,8 @@
 'use client';
 
-import classNames from 'clsx';
 import { HairMenuRecord } from 'lib/graphql';
 import { useSectionInView } from 'lib/hooks';
+import { cn } from 'lib/utils';
 import React from 'react';
 
 import PriceModule from './PriceModules/PriceModule';
@@ -19,7 +19,7 @@ export default function HairMenu({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      className={classNames(
+      className={cn(
         'align-center flex flex-col items-center justify-center overflow-hidden px-2 py-10 text-gray-200 md:px-10',
       )}
     >
