@@ -4,11 +4,7 @@ query Socials {
       id
       name
       url
-      icon {
-        url
-        height
-        width
-      }
+      icon
     }
   }
 }

@@ -1,7 +1,6 @@
 'use client';
 
-import clsx from 'clsx';
-import SvgRenderer from 'components/SvgRenderer';
+import IconRenderer from 'components/IconRenderer';
 import { useActiveSectionContext } from 'context/ActiveSectionContext';
 import {
   motion,
@@ -11,6 +10,7 @@ import {
   useTransform,
 } from 'framer-motion';
 import { LinkRecord, PageModelContentField } from 'lib/graphql';
+import { cn } from 'lib/utils';
 import Link from 'next/link';
 import { useEffect } from 'react';
 
@@ -59,25 +59,27 @@ export default function DesktopNavigation({
   );
 
   return (
-    <div className='hidden w-full md:sticky md:top-0 md:z-40 md:flex'>
+    <div className='relative hidden w-full md:sticky md:top-0 md:z-40 md:flex'>
       <motion.div
         style={{
           height: useTransform(
             scrollYBoundedProgressThrottled,
             [0, 1],
-            [95, 65],
+            [80, 60],
           ),
           backgroundColor: useMotionTemplate`rgb(0 0 0 / ${useTransform(
             scrollYBoundedProgressThrottled,
             [0, 1],
-            [0.5, 0.2],
+            [0.3, 0.2],
           )})`,
         }}
-        className='absolute z-20 flex w-full items-center justify-between bg-black/30 px-6 shadow-sm backdrop-blur-sm lg:px-16 xl:px-28'
+        className='absolute inset-x-4 z-20 mt-2 flex items-center justify-between rounded-lg px-4 shadow-sm backdrop-blur-sm lg:px-16 xl:px-28'
         id='nav'
       >
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-4 text-3xl'>
           {socialMediaLinks?.map((links: LinkRecord) => {
+            if (!links.icon) return null;
+
             return (
               <Link
                 key={`socialLink-${links.id}`}
@@ -87,7 +89,7 @@ export default function DesktopNavigation({
                 href={links.url as string}
                 className='text-gray-300 hover:text-white'
               >
-                <SvgRenderer url={links.icon?.url as string} />
+                <IconRenderer iconData={links.icon} />
               </Link>
             );
           })}
@@ -108,7 +110,7 @@ export default function DesktopNavigation({
                     setActiveSection(section.navigationId as string);
                     setTimeOfLastClick(Date.now());
                   }}
-                  className={clsx(
+                  className={cn(
                     'relative flex px-2 py-1 uppercase opacity-100 lg:px-3 lg:py-2 lg:text-lg xl:px-4 xl:text-xl',
                     {
                       'font-light text-gray-300 hover:text-white':
@@ -123,7 +125,7 @@ export default function DesktopNavigation({
                   {section.navigationId}
                   {section.navigationId === activeSection && (
                     <motion.span
-                      className='absolute inset-0 -z-10 rounded-full bg-gray-300/10'
+                      className='absolute inset-0 -z-10 rounded bg-gray-300/10'
                       layoutId='activeSection'
                       transition={{
                         type: 'spring',

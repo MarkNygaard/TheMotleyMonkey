@@ -14,6 +14,25 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'slide-in': {
+          '0%': { opacity: '0', transform: 'translateX(-200px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'slide-up': {
+          '0%': { opacity: '0', transform: 'translateY(100px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.8s ease-out forwards',
+        'slide-in': 'slide-in 0.8s ease-out forwards',
+        'slide-up': 'slide-up 0.4s ease-out 0.5s forwards',
+      },
       spacing: {
         'safe-top': 'env(safe-area-inset-top)',
         'safe-bottom': 'env(safe-area-inset-bottom)',
@@ -69,6 +88,13 @@ module.exports = {
         8: '8',
         9: '9',
         10: '10',
+      },
+      transitionProperty: {
+        opacity: 'opacity',
+        transform: 'transform',
+      },
+      transitionDuration: {
+        800: '800ms',
       },
     },
   },
