@@ -1,6 +1,5 @@
 import Biography from '@Sections/Biography/Biography';
 import Footer from '@Sections/Footer/Footer';
-import Grid from '@Sections/Grid/Grid';
 import HairMenu from '@Sections/HairMenu/HairMenu';
 import Hero from '@Sections/Hero/Hero';
 import ImageSection from '@Sections/Image/Image';
@@ -32,8 +31,6 @@ export default function Sections({ sections, firstSection }: Readonly<Props>) {
             return <Text key={section.id} {...section} />;
           case 'YoutubeVideoRecord':
             return <YoutubeVideo key={section.id} {...section} />;
-          case 'GridRecord':
-            return <Grid key={section.id} {...section} />;
           case 'HairMenuRecord':
             return <HairMenu key={section.id} {...section} />;
           case 'BiographyRecord':

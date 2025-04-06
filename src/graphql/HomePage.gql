@@ -23,9 +23,6 @@ query HomePage {
       ... on TextImageRecord {
         ...TextImageFragment
       }
-      ... on GridRecord {
-        ...GridFragment
-      }
       ... on YoutubeVideoRecord {
         ...YoutubeVideoFragment
       }
