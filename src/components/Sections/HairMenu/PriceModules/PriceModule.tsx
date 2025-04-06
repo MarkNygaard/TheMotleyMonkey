@@ -1,9 +1,9 @@
 'use client';
 
-import classNames from 'clsx';
 import { motion, useAnimation } from 'framer-motion';
 import { PriceModuleRecord, PriceRecord } from 'lib/graphql';
 import { useBreakpoint } from 'lib/hooks';
+import { cn } from 'lib/utils';
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -68,7 +68,7 @@ export default function PriceModule({
         className='mx-auto h-[1px] w-28 bg-skin-accent'
       ></motion.div>
       <div
-        className={classNames(
+        className={cn(
           'mx-auto grid font-normal text-white md:w-full lg:pt-2 xl:w-3/4',
           {
             '': prices.length === 1,

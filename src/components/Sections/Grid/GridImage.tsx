@@ -1,5 +1,5 @@
-import classNames from 'clsx';
 import { GridImageRecord } from 'lib/graphql';
+import { cn } from 'lib/utils';
 import React from 'react';
 import { Image } from 'react-datocms';
 
@@ -8,7 +8,7 @@ type GridImageProps = GridImageRecord & { height: string };
 export function GridImage({ image, height }: GridImageProps) {
   return (
     <div
-      className={classNames(
+      className={cn(
         'relative flex shrink-0 self-center overflow-hidden object-fill',
         {
           'h-52': height === 'Small',

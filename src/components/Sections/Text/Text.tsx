@@ -1,10 +1,10 @@
 'use client';
 
 import StructuredText from '@ui/StructuredText/StructuredText';
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { TextRecord } from 'lib/graphql';
 import { useAnimatedSectionInView } from 'lib/hooks';
+import { cn } from 'lib/utils';
 import React from 'react';
 
 export default function Text({
@@ -24,7 +24,7 @@ export default function Text({
     <div
       ref={ref}
       id={navigationIdNoSpace!}
-      className={clsx(
+      className={cn(
         'align-center flex flex-col items-center justify-center overflow-hidden px-4 py-10 md:px-10',
         {
           'bg-skin-secondary': backgroundColor === true,
