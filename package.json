@@ -47,7 +47,7 @@
     "@graphql-codegen/typescript-operations": "^4.6.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "22.14.1",
-    "@types/react": "19.1.0",
+    "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "@types/throttle-debounce": "^5.0.2",
     "autoprefixer": "^10.4.21",
