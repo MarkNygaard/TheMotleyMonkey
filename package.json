@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@fortawesome/react-fontawesome": "^0.2.3",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@react-google-maps/api": "^2.20.7",
     "@vercel/analytics": "^1.5.0",
