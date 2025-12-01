@@ -5392,10 +5392,10 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-lite-youtube-embed@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/react-lite-youtube-embed/-/react-lite-youtube-embed-3.3.1.tgz#38feb65b52f848af5e9660f54386fbe7c9ca22ae"
-  integrity sha512-TYLipb2K5dVco9iOPKIyj4iPDu8i9A94ckngeqHcSfNvWUFZOCEkZ/Arimny6qaFwAOzaiQH6pGgRSDWsHJ0iw==
+react-lite-youtube-embed@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/react-lite-youtube-embed/-/react-lite-youtube-embed-3.3.3.tgz#a953e66d347c183b978d39257d93d6f4c46c377e"
+  integrity sha512-RGrRpVu4cUKnIlS0/mZoWdS4rwdL0xAWpinbnzW+RsVrzh28URzTLl5zdOazlDbm6C0UM4ssnChbgcmEflr35Q==
 
 react-responsive@^10.0.1:
   version "10.0.1"
