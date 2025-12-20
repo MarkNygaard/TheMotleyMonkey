@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: process.env.NODE_ENV === 'development' ? false : true,
   images: {
-    domains: ['www.datocms-assets.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.datocms-assets.com',
+      },
+    ],
   },
 };
 

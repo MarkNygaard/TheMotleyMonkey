@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src",
     "lint:fix": "eslint src --fix && yarn format",
-    "lint:strict": "eslint --max-warnings=0 src",
+    "lint:strict": "eslint src --max-warnings=0",
     "codegen": "graphql-codegen",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
@@ -26,7 +26,7 @@
     "framer-motion": "^12.23.25",
     "graphql": "^16.12.0",
     "graphql-request": "7.3.2",
-    "next": "15.5.5",
+    "next": "16.1.0",
     "react": "19.1.0",
     "react-datocms": "^7.2.3",
     "react-dom": "19.1.0",
@@ -51,9 +51,13 @@
     "@types/react-dom": "19.1.6",
     "@types/throttle-debounce": "^5.0.2",
     "autoprefixer": "^10.4.21",
+    "@next/eslint-plugin-next": "^16.1.0",
     "eslint": "^9.24.0",
-    "eslint-config-next": "16.0.4",
-    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.2.0",
+    "typescript-eslint": "^8.32.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.3.0",
     "graphql-tag": "^2.12.6",
@@ -68,7 +72,7 @@
     "typescript": "5.9.3"
   },
   "volta": {
-    "node": "20.9.0",
+    "node": "20.19.0",
     "yarn": "1.22.18"
   }
 }
