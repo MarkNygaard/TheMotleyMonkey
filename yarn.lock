@@ -3614,10 +3614,10 @@ graphql-config@^5.1.1:
     string-env-interpolation "^1.0.1"
     tslib "^2.4.0"
 
-graphql-request@7.3.2:
-  version "7.3.2"
-  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-7.3.2.tgz#63e11e5ab23b5d39e2568bf2bed80563c2ff83a5"
-  integrity sha512-ZnONGa8imXXPOImZoSTrV4qtrCAOv/ulXMAMmFzttObjdILDmNwDEcnloZKOncG+ucWN1JKyjMG7lAzuYDZmlg==
+graphql-request@7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-7.4.0.tgz#97a1fc871e79f682d816963446ac6b7f99c963f9"
+  integrity sha512-xfr+zFb/QYbs4l4ty0dltqiXIp07U6sl+tOKAb0t50/EnQek6CVVBLjETXi+FghElytvgaAWtIOt3EV7zLzIAQ==
   dependencies:
     "@graphql-typed-document-node/core" "^3.2.0"
 
