@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@0no-co/graphql.web/-/graphql.web-1.1.2.tgz#9af8deaf3f236c1c6ee99cc5349051475e5dcc83"
   integrity sha512-N2NGsU5FLBhT8NZ+3l2YrzZSHITjNXNuDhC4iDiikv0IujaJ0Xc6xIxQZ/Ek3Cb+rgPjnLHYyJm11tInuJn+cw==
 
+"@0no-co/graphql.web@^1.0.11":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@0no-co/graphql.web/-/graphql.web-1.2.0.tgz#296d00581bfaaabfda1e976849d927824aaea81b"
+  integrity sha512-/1iHy9TTr63gE1YcR5idjx8UREz1s0kFhydf3bBLCXyqjhkIc6igAzTOx3zPifCwFR87tsh/4Pa9cNts6d2otw==
+
 "@alloc/quick-lru@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
@@ -379,6 +384,18 @@
   integrity sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
+
+"@datocms/cda-client@^0.2.5":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@datocms/cda-client/-/cda-client-0.2.10.tgz#40e0f2df1197f9d29f08cbbd0b0b62eb230fc935"
+  integrity sha512-uj5M4t0ifwlxBRFdgqnt1Sb4A8RNkv1e6sYa6gP6Bh+oGQwhtnGnvyNazA4KpLhqrO2UAw3dbKB5WltcB5JeAg==
+  dependencies:
+    "@0no-co/graphql.web" "^1.0.11"
+
+"@datocms/content-link@^0.3.13":
+  version "0.3.18"
+  resolved "https://registry.yarnpkg.com/@datocms/content-link/-/content-link-0.3.18.tgz#6f0829d130457fdd07b727a6d98eea52c1f16159"
+  integrity sha512-bBiZgvJYWcR6Q0XyeV9zV9BBxbqi2UIDexqkUy9aKJ7qPN6cVzkk6SWQox3o51tJ/R4JlPnVpCraGedsj2LeLA==
 
 "@emnapi/runtime@^1.7.0":
   version "1.7.1"
@@ -2750,12 +2767,13 @@ dataloader@^2.2.3:
   resolved "https://registry.yarnpkg.com/dataloader/-/dataloader-2.2.3.tgz#42d10b4913515f5b37c6acedcb4960d6ae1b1517"
   integrity sha512-y2krtASINtPFS1rSDjacrFgn1dcUuoREVabwlOGOe4SdxenREqwjwjElAdwvbGM7kgZz9a3KVicWR7vcz8rnzA==
 
-datocms-listen@^0.1.9:
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/datocms-listen/-/datocms-listen-0.1.15.tgz#fc9d970ac9754f6f21b7f9e7a31ec7db1b0247f1"
-  integrity sha512-0LcdKYW/ilWdyrRzQ+YbkAk4r2dge63vzHtfv19L8pfbfYurQgXP9/ck703QZL//YqBoc0OKBS4BP4WUQ6JDKA==
+datocms-listen@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/datocms-listen/-/datocms-listen-1.0.2.tgz#4f791fcede981aa5ec88950223b72eef9bc4d783"
+  integrity sha512-7E1VFqd6/DEZAgfr9GtVFPPgI6xzIKOHR4Iths9FrjEKiE85rK9lzHhgPOTUiQJFALu1KNyARJUsL8Uj8iehxw==
   dependencies:
     "@0no-co/graphql.web" "^1.0.1"
+    "@datocms/cda-client" "^0.2.5"
 
 datocms-structured-text-generic-html-renderer@^5.0.0:
   version "5.0.0"
@@ -4952,13 +4970,14 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-datocms@^7.2.4:
-  version "7.2.4"
-  resolved "https://registry.yarnpkg.com/react-datocms/-/react-datocms-7.2.4.tgz#c3daf4532a73a32df2ccd34f0b21b6b99f5e19a2"
-  integrity sha512-ybi4wQD4RF1q22DemqPYWD5laIXjpzGYWcE9u6kJ/CvTPWIzsAMwCttJ7bYOQQ6t9D240/SESFeFBHeuozdcEw==
+react-datocms@^7.2.14:
+  version "7.2.14"
+  resolved "https://registry.yarnpkg.com/react-datocms/-/react-datocms-7.2.14.tgz#495fc4143f872688ffad350c8cbf462557f207af"
+  integrity sha512-0rtWae92GnPLe+0WmOmt2raq27e/Fw+OLUEK+ZvGP1hZro/2kEyeD0KlWvrAKXUlaGtmf8vSE9CzoXfYfqxz/g==
   dependencies:
+    "@datocms/content-link" "^0.3.13"
     "@mux/mux-player-react" ">=2.5.0 <3"
-    datocms-listen "^0.1.9"
+    datocms-listen "^1.0.2"
     datocms-structured-text-generic-html-renderer "^5.0.0"
     datocms-structured-text-utils "^5.1.6"
     react-intersection-observer "^9.4.3"
