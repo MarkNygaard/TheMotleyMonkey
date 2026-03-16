@@ -39,7 +39,7 @@
     "throttle-debounce": "^5.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.3",
+    "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.4.1",
     "@graphql-codegen/cli": "^6.1.2",
     "@graphql-codegen/typed-document-node": "^6.1.7",
