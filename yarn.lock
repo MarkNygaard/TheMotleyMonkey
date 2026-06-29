@@ -674,13 +674,13 @@
     change-case-all "1.0.15"
     tslib "^2.8.0"
 
-"@graphql-codegen/typed-document-node@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typed-document-node/-/typed-document-node-7.0.0.tgz#9e7488e3bc3eeaf86af9176fd13c5aaffd6855dc"
-  integrity sha512-gSsMEKe1QV5QmF+TsijSyhLYGYRYGD2fe7rGIJwca4s1gZK+aD3qjNFq3C0yFUsb92bsCxiOJTWeiPPfdPSMTg==
+"@graphql-codegen/typed-document-node@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typed-document-node/-/typed-document-node-7.0.3.tgz#98df3887322e1ba945d13391f3815f79b4e64742"
+  integrity sha512-l/4KenYJG5D8Aj6Aa2KPeS0fdMIIi04Qx28d4SLwMWuyFU9WXspU5mR9YMNDRZzaTgBtGR8aMIl9RzyiWf5uUw==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^7.0.0"
-    "@graphql-codegen/visitor-plugin-common" "^7.0.0"
+    "@graphql-codegen/plugin-helpers" "^7.0.1"
+    "@graphql-codegen/visitor-plugin-common" "^7.1.0"
     auto-bind "^5.0.0"
     change-case-all "^2.1.0"
     tslib "^2.8.0"
@@ -745,10 +745,10 @@
     parse-filepath "^1.0.2"
     tslib "^2.8.0"
 
-"@graphql-codegen/visitor-plugin-common@^7.0.0", "@graphql-codegen/visitor-plugin-common@^7.0.1", "@graphql-codegen/visitor-plugin-common@^7.0.3":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-7.1.0.tgz#73aaf4aa2ce72255e687348d311f8aa26749dfb1"
-  integrity sha512-CO4fJyflbYBuAwbQD16bAuWBIXkz9il3JwyC+pQzXh8NJ+BZZDXmYjmVeGeJuoMUIQDb+CNo2thCU0bFFamAkg==
+"@graphql-codegen/visitor-plugin-common@^7.0.1", "@graphql-codegen/visitor-plugin-common@^7.0.3", "@graphql-codegen/visitor-plugin-common@^7.1.0":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-7.1.2.tgz#b6ef8c68f2c0fbc32e3350a5c6d2e6fb05973f21"
+  integrity sha512-1TdaKeDBj91ZYcJO9fMHHo02HEoWCSYhlsi4B7EGto7cqQa2htraAi+sCYIxQuccxNsRmM6apQ+O5+cJj1Bs7w==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^7.0.1"
     "@graphql-tools/optimize" "^2.0.0"
