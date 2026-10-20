@@ -1,11 +1,13 @@
 'use client';
 
-import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 import { motion } from 'framer-motion';
 import { FooterRecord } from 'lib/graphql';
 import { useAnimatedSectionInView } from 'lib/hooks';
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { StructuredText } from 'react-datocms';
+
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
 export default function Footer({
   location,
@@ -21,18 +23,8 @@ export default function Footer({
 
   const navigationIdNoSpace = navigationId?.replace(/\s/g, '');
 
-  const center = {
-    lat: location?.latitude,
-    lng: location?.longitude,
-  };
+  const center: [number, number] = [location?.latitude, location?.longitude];
 
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY!,
-  });
-
-  if (!isLoaded) {
-    return <div>Loading...</div>;
-  }
   return (
     <div
       ref={ref}
@@ -79,22 +71,7 @@ export default function Footer({
         <div className='container col-start-1 col-end-2 row-start-1 row-end-4 mx-auto px-4 md:px-10 xl:px-0'>
           <div className='mx-auto xl:w-3/4'>
             <div className='h-60 md:mx-4 md:h-80 xl:h-96'>
-              <GoogleMap
-                center={center}
-                zoom={17}
-                mapContainerStyle={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '0.375rem',
-                }}
-                options={{
-                  streetViewControl: false,
-                  mapTypeControl: false,
-                  fullscreenControl: false,
-                }}
-              >
-                <Marker position={center} />
-              </GoogleMap>
+              <Map center={center} />
             </div>
           </div>
         </div>
